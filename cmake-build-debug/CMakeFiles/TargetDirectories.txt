@@ -1,0 +1,3 @@
+D:/iCloudDrive/Università/Repository/data-structures/cmake-build-debug/CMakeFiles/data_structures.dir
+D:/iCloudDrive/Università/Repository/data-structures/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/iCloudDrive/Università/Repository/data-structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
