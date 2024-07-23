@@ -18,8 +18,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Aggiunta Teoria Lista">
-      <change afterPath="$PROJECT_DIR$/data_structures/List_Vector.h" afterDir="false" />
+    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Unversioned Files">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <workItem from="1721733686460" duration="359000" />
       <workItem from="1721734120379" duration="2433000" />
       <workItem from="1721736599476" duration="2272000" />
-      <workItem from="1721739247639" duration="489000" />
+      <workItem from="1721739247639" duration="715000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -108,7 +108,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721731625312</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aggiunta realizzazione lista con vettore">
+      <option name="closed" value="true" />
+      <created>1721739779319</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721739779319</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Unversioned Files">
+      <option name="closed" value="true" />
+      <created>1721739807273</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721739807273</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +149,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Aggiunta Teoria Lista" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta Teoria Lista" />
+    <MESSAGE value="Aggiunta realizzazione lista con vettore" />
+    <MESSAGE value="Unversioned Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unversioned Files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
