@@ -22,7 +22,7 @@ public:
     //costruttore con dimensione elementi
     List_Vector(int);
     //costruttore di copia
-    List_Vector(const List_vector<T>&);
+    List_Vector(const List_Vector<T>&);
     //distruttore
     ~List_Vector();
 
@@ -34,13 +34,10 @@ public:
     posizione primolista() const;
     bool finelista(posizione) const;
     posizione succlista(posizione) const;
-    posizione preclista(posizione) const;
+    posizione predlista(posizione) const;
     void inslista(const tipo_elem&, posizione&);
     void canclista(posizione&);
 
-    //ridefinizione degli operatori
-    List_vector<T>& operator= (const List_vector<T>&);
-    bool operator == (const List_vector<T>&);
 
 private:
     tipo_elem* elementi;
@@ -54,7 +51,7 @@ private:
 template <class T>
 List_Vector<T>::List_Vector()
 {
-    this->lunghezza = 0;
+    this->lunghezza = 1;
     this->crealista();
 }
 
@@ -84,8 +81,9 @@ List_Vector<T>::~List_Vector() {
 //Operatori
 template <class T>
 void List_Vector<T>::crealista() {
-    this->dimensione = 0;                                  //
+    this->dimensione = 256;                                //
     this->elementi = new tipo_elem[this->dimensione];      // postcondizione
+    cout << "Lista creata" << endl;
 }
 
 template <class T>
@@ -103,7 +101,7 @@ typename List_Vector<T>::tipo_elem List_Vector<T>::leggilista(posizione p) const
 }
 
 template <class T>
-void List_Vector<T>::List_Vector<T>::scrivilista(const tipo_elem& e, posizione p) {
+void List_Vector<T>::scrivilista(const tipo_elem& e, posizione p) {
     if ( p >= 1 && p <= this->lunghezza) { //precondizione
         this->elementi[p] = e; //postcondizione
     } else {
@@ -117,7 +115,7 @@ typename List_Vector<T>::posizione List_Vector<T>::primolista() const {
 }
 
 template <class T>
-bool List_Vector<T>::List_Vector<T>::finelista(posizione p) {
+bool List_Vector<T>::finelista(posizione p) const {
     if ( p >= 1 && p <= this->lunghezza + 1) { //precondizione
         if (p == lunghezza + 1) {
             return true; //postcondizione
@@ -148,7 +146,7 @@ typename List_Vector<T>::posizione List_Vector<T>::predlista(posizione p) const 
 }
 
 template <class T>
-void List_Vector<T>::List_Vector<T>::inslista(const tipo_elem& e, posizione& p) {
+void List_Vector<T>::inslista(const tipo_elem& e, posizione& p) {
     if ( p >= 2 && p <= this->lunghezza + 1) { //precondizione
         for (int i = lunghezza; i >= p; i--) {
             elementi[i-1] = elementi[i];
@@ -162,12 +160,12 @@ void List_Vector<T>::List_Vector<T>::inslista(const tipo_elem& e, posizione& p) 
 }
 
 template <class T>
-void List_Vector<T>::List_Vector<T>::canclista(posizione& p) {
+void List_Vector<T>::canclista(posizione& p) {
     if ( p >= 2 && p <= this->lunghezza ) { //precondizione
         for (int i = p; i < lunghezza - 1; i++) {
-            elementi[i] = elementi[i+1]
+            elementi[i] = elementi[i+1];
         }
-        lunghezza--
+        lunghezza--;
     } else {
         throw std::out_of_range("Posizione non valida");
     }

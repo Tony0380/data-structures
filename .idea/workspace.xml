@@ -18,8 +18,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Unversioned Files">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="update README.md">
+      <change afterPath="$PROJECT_DIR$/data_structures/Lista/ProvaLista.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/List.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/List.md" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/List.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/List_Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/List_Vector.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +87,27 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Lista" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProvaLista.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="data-structures" TARGET_NAME="ProvaLista.cpp" CONFIG_NAME="ProvaLista.cpp">
+      <option name="sourceFile" value="data_structures\Lista\ProvaLista.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="C/C++ File.ProvaLista.cpp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,7 +123,8 @@
       <workItem from="1721733686460" duration="359000" />
       <workItem from="1721734120379" duration="2433000" />
       <workItem from="1721736599476" duration="2272000" />
-      <workItem from="1721739247639" duration="715000" />
+      <workItem from="1721739247639" duration="2014000" />
+      <workItem from="1721741306108" duration="1372000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -124,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721739807273</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update README.md">
+      <option name="closed" value="true" />
+      <created>1721739995275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721739995275</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +185,8 @@
     <MESSAGE value="Aggiunta Teoria Lista" />
     <MESSAGE value="Aggiunta realizzazione lista con vettore" />
     <MESSAGE value="Unversioned Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unversioned Files" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
