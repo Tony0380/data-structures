@@ -81,7 +81,7 @@ List_Vector<T>::~List_Vector() {
 //Operatori
 template <class T>
 void List_Vector<T>::crealista() {
-    this->dimensione = 256;                                //
+    this->dimensione = 1;                                //
     this->elementi = new tipo_elem[this->dimensione];      // postcondizione
     cout << "Lista creata" << endl;
 }
@@ -94,7 +94,7 @@ bool List_Vector<T>::listavuota() const {
 template <class T>
 typename List_Vector<T>::tipo_elem List_Vector<T>::leggilista(posizione p) const {
     if ( p >= 1 && p <= this->lunghezza) { //precondizione
-        return this->elementi[p]; //postcondizione
+        return this->elementi[p - 1]; //postcondizione
     } else {
         throw std::out_of_range("Posizione non valida");
     }
@@ -103,7 +103,7 @@ typename List_Vector<T>::tipo_elem List_Vector<T>::leggilista(posizione p) const
 template <class T>
 void List_Vector<T>::scrivilista(const tipo_elem& e, posizione p) {
     if ( p >= 1 && p <= this->lunghezza) { //precondizione
-        this->elementi[p] = e; //postcondizione
+        this->elementi[p - 1] = e; //postcondizione
     } else {
         throw std::out_of_range("Posizione non valida");
     }
