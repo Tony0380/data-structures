@@ -43,7 +43,7 @@ private:
     tipo_elem* elementi;
     int dimensione;
     int lunghezza;
-
+    void cambiadimensione();
 };
 
 
@@ -147,6 +147,10 @@ typename List_Vector<T>::posizione List_Vector<T>::predlista(posizione p) const 
 
 template <class T>
 void List_Vector<T>::inslista(const tipo_elem& e, posizione& p) {
+    if (this->lunghezza == this->dimensione) {
+        cambiadimensione();
+    }
+
     if ( p >= 2 && p <= this->lunghezza + 1) { //precondizione
         for (int i = lunghezza; i >= p; i--) {
             elementi[i-1] = elementi[i];
@@ -169,6 +173,17 @@ void List_Vector<T>::canclista(posizione& p) {
     } else {
         throw std::out_of_range("Posizione non valida");
     }
+}
+
+template <class T>
+void List_Vector<T>::cambiadimensione() {
+    tipo_elem* temp = new tipo_elem[this->dimensione * 2];
+    for (int i = 0; i < this->lunghezza; i++) {
+        temp[i] = this->elementi[i];
+    }
+    delete[] this->elementi;
+    this->elementi = temp;
+    this->dimensione *= 2;
 }
 
 #endif //DATA_STRUCTURES_LIST_VECTOR_H
