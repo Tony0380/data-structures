@@ -14,7 +14,7 @@ int main() {
     cout << i << endl;
     l.scrivilista(5, i);
     cout << "prova" << endl;
-    cout << l.leggilista(1) << endl;
+    l.stampalista();
     i = l.succlista(i);
     l.inslista(6,i);
     cout << l.leggilista(1) << l.leggilista(2) << endl;

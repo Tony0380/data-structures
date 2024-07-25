@@ -39,12 +39,24 @@ public:
     void canclista(posizione&);
 
 
+    //operatori ausiliari
+    void stampalista() const;
+
 private:
     tipo_elem* elementi;
     int dimensione;
     int lunghezza;
     void cambiadimensione();
 };
+
+template<class T>
+void List_Vector<T>::stampalista() const {
+    cout << "< ";
+    for(int i = primolista(); i < lunghezza; i = this->succlista(i)) {
+        cout << this->leggilista(i) << " ";
+    }
+    cout << ">" <<endl;
+}
 
 
 //costruttore vuoto
@@ -111,7 +123,7 @@ void List_Vector<T>::scrivilista(const tipo_elem& e, posizione p) {
 
 template <class T>
 typename List_Vector<T>::posizione List_Vector<T>::primolista() const {
-    return 1; //postcondizione
+    return 0; //postcondizione
 }
 
 template <class T>
