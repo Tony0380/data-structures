@@ -10,11 +10,6 @@
 using namespace std;
 
 int main() {
-    Nodo_Lista<int> nodo1(1);
-    Nodo_Lista<int> nodo2(2);
-    nodo1.setNext(&nodo2);
+    Linked_List<int> l = Linked_List<int>();
 
-    cout<<nodo1.getElem()<<nodo1.getNext()->getElem();
-    nodo1.setElem(3);
-    cout<<nodo1.getElem()<<nodo1.getNext()->getElem();
 }
