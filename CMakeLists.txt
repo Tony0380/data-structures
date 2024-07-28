@@ -7,4 +7,5 @@ include_directories(.)
 include_directories(data_structures)
 
 add_executable(data_structures
-        data_structures/Lista/List.h)
+        data_structures/Lista/List.h
+)

@@ -52,7 +52,7 @@ private:
 template<class T>
 void List_Vector<T>::stampalista() const {
     cout << "< ";
-    for(int i = primolista(); i < lunghezza; i = this->succlista(i)) {
+    for(int i = primolista(); i <= lunghezza; i = this->succlista(i)) {
         cout << this->leggilista(i) << " ";
     }
     cout << ">" <<endl;
@@ -123,7 +123,7 @@ void List_Vector<T>::scrivilista(const tipo_elem& e, posizione p) {
 
 template <class T>
 typename List_Vector<T>::posizione List_Vector<T>::primolista() const {
-    return 0; //postcondizione
+    return 1; //postcondizione
 }
 
 template <class T>
