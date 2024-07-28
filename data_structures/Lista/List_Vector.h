@@ -42,6 +42,10 @@ public:
     //operatori ausiliari
     void stampalista() const;
 
+    // sovraccarico operatori
+    List_Vector<T>& operator= (const List_Vector<T>&);
+    bool operator == (const List_Vector<T>&);
+
 private:
     tipo_elem* elementi;
     int dimensione;
@@ -198,4 +202,37 @@ void List_Vector<T>::cambiadimensione() {
     this->dimensione *= 2;
 }
 
+
+template<class T>
+bool List_Vector<T>::operator==(const List_Vector<T> &L) {
+    if (this->lunghezzaLista!=L.lunghezzaLista)
+    {
+        return false;
+    }
+    else
+    {
+        for (int i=0;i<lunghezza;i++)
+        {
+            if (!(this->elementi[i]!=L.elementi[i]))
+                return false;
+        }
+        return true;
+    }
+}
+
+template<class T>
+List_Vector<T>& List_Vector<T>::operator=(const List_Vector<T> &L) {
+    if (this!=&L)
+    {
+        this->lunghezzaLista=L.lunghezzaLista;
+        this->lunghezzaArray=L.lunghezzaArray;
+        delete [] elementi;
+        elementi=new tipo_elem [lunghezza];
+        for (int i=0;i<lunghezza;i++)
+        {
+            elementi[i]=L.elementi[i];
+        }
+    }
+    return *this;
+}
 #endif //DATA_STRUCTURES_LIST_VECTOR_H
