@@ -80,9 +80,21 @@ private:
 };
 
 template<class T>
+Linked_List<T>::~Linked_List() {
+    posizione p = primolista();
+    while(!finelista(p)) {
+        posizione q = p;
+        p = succlista(p);
+        delete q;
+    }
+    delete testa;
+
+}
+
+template<class T>
 void Linked_List<T>::stampalista() const {
     cout<<"< ";
-    for(Nodo_Lista<T>* p = primolista(); !finelista(p); p = succlista(p)) {
+    for(Nodo_Lista<T>* p = primolista(); p != testa; p = succlista(p)) {
         cout<<p->getElem()<<" ";
     }
     cout<<">"<<endl;
@@ -90,7 +102,7 @@ void Linked_List<T>::stampalista() const {
 
 template<class T>
 void Linked_List<T>::canclista(Linked_List::posizione & p) {
-    if(!finelista(p) && !finelista(p)) {
+    if(!finelista(p)) {
         p->getPred()->setNext(p->getNext());
         p->getNext()->setPred(p->getPred());
         delete p;
@@ -120,8 +132,8 @@ typename Linked_List<T>::posizione Linked_List<T>::succlista(Linked_List::posizi
 }
 
 template<class T>
-bool Linked_List<T>::finelista(Linked_List::posizione) const {
-    return testa->getPred();
+bool Linked_List<T>::finelista(Linked_List::posizione p) const {
+    return p == testa;
 }
 
 template<class T>
