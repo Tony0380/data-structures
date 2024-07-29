@@ -10,4 +10,6 @@ add_executable(data_structures
         data_structures/Lista/List.h
         data_structures/Lista/Linked_List.h
         data_structures/Lista/Linked_List.h
+        data_structures/Pila/ProvaStack.cpp
+        data_structures/Pila/Stack_Vector.h
 )

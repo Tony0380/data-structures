@@ -37,10 +37,10 @@ public:
 
     void inpila(const tipo_elem &);
 
-    void stampapila();
+    void stampapila() const;
 private:
     void cambiadimensione();
-    const int DIM_INIZIALE = 10;
+    const int DIM_INIZIALE = 1;
     tipo_elem* elementi;
     int dimensione;
     int testa;
@@ -104,7 +104,7 @@ void Stack_Vector<T>::fuoripila() {
 }
 
 template<class T>
-void Stack_Vector<T>::Stack_Vector<T>::inpila(const tipo_elem & elem) {
+void Stack_Vector<T>::inpila(const tipo_elem & elem) {
     if( this->testa ==  this->dimensione) {
         this->cambiadimensione();
     }
@@ -114,7 +114,7 @@ void Stack_Vector<T>::Stack_Vector<T>::inpila(const tipo_elem & elem) {
 }
 
 template<class T>
-void Stack_Vector<T>::stampapila() {
+void Stack_Vector<T>::stampapila() const{
     cout<<"< ";
     for (int i = 0; i < this->testa; i++) {
         cout<<this->elementi[i]<<" ";
