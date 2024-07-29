@@ -80,6 +80,45 @@ private:
 };
 
 template<class T>
+bool Linked_List<T>::operator==(const Linked_List<T> & l2) {
+    if(lunghezza != l2.lunghezza) {
+        return false;
+    }
+    posizione p1 = primolista();
+    posizione p2 = l2.primolista();
+    while(!finelista(p1)) {
+        if(leggilista(p1) != l2.leggilista(p2)) {
+            return false;
+        }
+        p1 = succlista(p1);
+        p2 = l2.succlista(p2);
+    }
+    return true;
+}
+
+template<class T>
+Linked_List<T> &Linked_List<T>::operator=(const Linked_List<T> & copia) {
+    if(this != &copia) {
+        posizione p = primolista();
+        while(!finelista(p)) {
+            posizione q = p;
+            p = succlista(p);
+            delete q;
+        }
+        delete testa;
+        crealista();
+        p = copia.primolista();
+        posizione p1 = this->primolista();
+        while(!copia.finelista(p)) {
+            this->inslista(copia.leggilista(p),p1);
+            p1 = this->succlista(p1);
+            p = copia.succlista(p);
+        }
+    }
+    return *this;
+}
+
+template<class T>
 Linked_List<T>::~Linked_List() {
     posizione p = primolista();
     while(!finelista(p)) {
