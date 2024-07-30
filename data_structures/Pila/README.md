@@ -8,11 +8,11 @@
 * **Tipi: pila, boolean, tipoelem**
 
 * **Operatori:**
-    * creapila() -> pila
-    * pilavuota(pila) -> boolean
-    * leggipila(pila) -> tipoelem
-    * fuoripila(pila) -> pila
-    * inpila(tipoelem, pila) -> pila
+    * creapila : ( ) → pila
+    * pilavuota  : (pila) → boolean
+    * leggipila  : (pila) → tipoelem
+    * fuoripila  : (pila) → pila
+    * inpila  : (tipoelem, pila) → pila
 ### Specifica Semantica
 * Tipi:
   * Pila: insieme delle sequenze P = < a1, a2, … , an >, n>=0, di elementi di
