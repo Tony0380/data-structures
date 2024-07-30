@@ -73,65 +73,65 @@ private:
 };
 
 template<class T>
-void Linked_Stack<T>::stampapila() {
-    Linked_Stack<T> stampa = Linked_Stack(this);
-    cout<<"< ";
-    while(!stampa.pilavuota()) {
-        cout<<stampa.leggipila()<<" ";
-        stampa.fuoripila();
+void Linked_Stack<T>::stampapila () {
+    Linked_Stack<T> stampa = Linked_Stack (this);
+    cout << "< ";
+    while (!stampa.pilavuota ()) {
+        cout << stampa.leggipila () << " ";
+        stampa.fuoripila ();
     }
-    cout<<">";
+    cout << ">";
 }
 
 template<class T>
-void Linked_Stack<T>::inpila(const tipo_elem & e) {
+void Linked_Stack<T>::inpila (const tipo_elem &e) {
     Nodo_Stack<T> nuovaTesta;
-    nuovaTesta.setElem(e);
-    nuovaTesta.setPred(testa);
+    nuovaTesta.setElem (e);
+    nuovaTesta.setPred (testa);
     testa = nuovaTesta; //postcondizione
 }
 
 template<class T>
-void Linked_Stack<T>::fuoripila() {
-    if(!pilavuota()) { //precondizione
+void Linked_Stack<T>::fuoripila () {
+    if (!pilavuota ()) { //precondizione
         Nodo_Stack<T> tmp = testa;
-        testa = testa->getPred(); //postcondizione
+        testa = testa->getPred (); //postcondizione
         tmp = nullptr;
         delete tmp;
     } else {
-        throw std::out_of_range("PILA VUOTA");
+        throw std::out_of_range ("PILA VUOTA");
     }
 }
 
 template<class T>
-typename Linked_Stack<T>::tipo_elem Linked_Stack<T>::leggipila() const {
-    if(!pilavuota()) { //precondizione
-        return testa->getElem(); //postcondizione
+typename Linked_Stack<T>::tipo_elem Linked_Stack<T>::leggipila () const {
+    if (!pilavuota ()) { //precondizione
+        return testa->getElem (); //postcondizione
     } else {
-        throw std::out_of_range("PILA VUOTA");
+        throw std::out_of_range ("PILA VUOTA");
     }
 }
 
 template<class T>
-bool Linked_Stack<T>::pilavuota() const {
+bool Linked_Stack<T>::pilavuota () const {
     return (testa == nullptr); //postcondizione
 }
 
 template<class T>
-void Linked_Stack<T>::creapila() {
+void Linked_Stack<T>::creapila () {
     testa = nullptr;
 }
 
 template<class T>
-Linked_Stack<T>::Linked_Stack(const tipo_elem & e) {
-    creapila();
-    inpila(e);
+Linked_Stack<T>::Linked_Stack (const tipo_elem &e) {
+    creapila ();
+    inpila (e);
 }
 
 template<class T>
-Linked_Stack<T>::~Linked_Stack() {
-    while(!pilavuota()) {
-        fuoripila();
+Linked_Stack<T>::~Linked_Stack () {
+    while (!pilavuota ()) {
+        fuoripila ();
     }
 }
 
