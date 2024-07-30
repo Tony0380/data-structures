@@ -20,10 +20,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Lista/Linked_List.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/Linked_List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Lista/List_Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/List_Vector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Lista/ProvaLista.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/ProvaLista.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Pila/ProvaStack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/ProvaStack.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Pila/Stack_Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Stack_Vector.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,8 +122,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="C/C++ File.ProvaLista.cpp" />
         <item itemvalue="C/C++ File.ProvaStack.cpp" />
+        <item itemvalue="C/C++ File.ProvaLista.cpp" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +156,7 @@
       <workItem from="1722238287961" duration="3308000" />
       <workItem from="1722243480763" duration="12794000" />
       <workItem from="1722345660808" duration="12567000" />
-      <workItem from="1722358561280" duration="94000" />
+      <workItem from="1722358561280" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -385,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722352668293</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722358747527</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1722358747527</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

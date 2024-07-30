@@ -66,11 +66,55 @@ public:
     void inpila (const tipo_elem &);
 
     //operatori ausiliari
+
     void stampapila () const;
+
+    //sovraccarico operatori
+
+    Linked_Stack<T> &operator= (const Linked_Stack<T> &);
+
+    bool operator== (const Linked_Stack<T> &);
 
 private:
     Nodo_Stack<T> *testa;
 };
+
+template<class T>
+Linked_Stack<T> &Linked_Stack<T>::operator= (const Linked_Stack<T> &s2) {
+    if (this != &s2) {
+        while (!pilavuota ()) {
+            fuoripila ();
+        }
+        Linked_Stack<T> tmp;
+        Nodo_Stack<T> *tmp1 = s2.testa;
+        while (tmp1 != nullptr) {
+            tmp.inpila (tmp1->getElem ());
+            tmp1 = tmp1->getPred ();
+        }
+        while (!tmp.pilavuota ()) {
+            inpila (tmp.leggipila ());
+            tmp.fuoripila ();
+        }
+    }
+    return *this;
+}
+
+template<class T>
+bool Linked_Stack<T>::operator== (const Linked_Stack<T> &s2) {
+    if (testa != s2.testa) {
+        return false;
+    }
+    Nodo_Stack<T> *tmp1 = testa;
+    Nodo_Stack<T> *tmp2 = s2.testa;
+    while (tmp1 != nullptr) {
+        if (tmp1->getElem () != tmp2->getElem ()) {
+            return false;
+        }
+        tmp1 = tmp1->getPred ();
+        tmp2 = tmp2->getPred ();
+    }
+    return true;
+}
 
 template<class T>
 void Linked_Stack<T>::stampapila () const {
