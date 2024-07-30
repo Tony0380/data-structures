@@ -37,6 +37,7 @@ public:
 
     void inpila(const tipo_elem &);
 
+    //operatori ausiliari
     void stampapila() const;
 private:
     void cambiadimensione();
@@ -100,7 +101,7 @@ typename Stack_Vector<T>::tipo_elem Stack_Vector<T>::leggipila() const {
 
 template<class T>
 void Stack_Vector<T>::fuoripila() {
-    this->testa -= 1;
+    this->testa -= 1; //postcondizione
 }
 
 template<class T>
@@ -110,7 +111,7 @@ void Stack_Vector<T>::inpila(const tipo_elem & elem) {
     }
 
     this->testa += 1;
-    this->elementi[testa - 1] = elem;
+    this->elementi[testa - 1] = elem; //postcondizione
 }
 
 template<class T>

@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "Stack_Vector.h"
-
+#include "Linked_Stack.h"
 using namespace std;
 
 int main () {
