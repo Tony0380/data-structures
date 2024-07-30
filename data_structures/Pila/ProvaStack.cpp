@@ -8,7 +8,7 @@
 using namespace std;
 
 int main () {
-    Stack_Vector<int> S;
+    Linked_Stack<int> S;
     S.inpila(1);
     S.stampapila();
     S.inpila(2);
@@ -17,7 +17,5 @@ int main () {
     S.fuoripila();
     S.stampapila();
     cout<<S.leggipila()<<endl;
-    Stack_Vector<int> S2 = Stack_Vector(S);
-    S2.stampapila();
     return 0;
 }

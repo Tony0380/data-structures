@@ -66,35 +66,36 @@ public:
     void inpila (const tipo_elem &);
 
     //operatori ausiliari
-    void stampapila ();
+    void stampapila () const;
 
 private:
     Nodo_Stack<T> *testa;
 };
 
 template<class T>
-void Linked_Stack<T>::stampapila () {
-    Linked_Stack<T> stampa = Linked_Stack (this);
+void Linked_Stack<T>::stampapila () const {
     cout << "< ";
-    while (!stampa.pilavuota ()) {
-        cout << stampa.leggipila () << " ";
-        stampa.fuoripila ();
+    Nodo_Stack<T> *sentinella = new Nodo_Stack<T>;
+    sentinella = testa;
+    while (sentinella != nullptr) {
+        cout << sentinella->getElem () << " ";
+        sentinella = sentinella->getPred ();
     }
-    cout << ">";
+    cout << ">" << endl;
 }
 
 template<class T>
 void Linked_Stack<T>::inpila (const tipo_elem &e) {
-    Nodo_Stack<T> nuovaTesta;
-    nuovaTesta.setElem (e);
-    nuovaTesta.setPred (testa);
+    Nodo_Stack<T> *nuovaTesta = new Nodo_Stack<T>;
+    nuovaTesta->setElem (e);
+    nuovaTesta->setPred (testa);
     testa = nuovaTesta; //postcondizione
 }
 
 template<class T>
 void Linked_Stack<T>::fuoripila () {
     if (!pilavuota ()) { //precondizione
-        Nodo_Stack<T> tmp = testa;
+        Nodo_Stack<T> *tmp = testa;
         testa = testa->getPred (); //postcondizione
         tmp = nullptr;
         delete tmp;
