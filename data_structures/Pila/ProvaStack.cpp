@@ -16,10 +16,13 @@ int main () {
     S2.inpila(1);
     S2.inpila(1);
     S2.inpila(1);
-    S2.inpila(1);
-    S2.inpila(1);
-    S3.inpila(1);
-    S3 = S2;
-    S3.stampapila();
+   S2.inpila(1);
+   S2.inpila(1);
+   S3.inpila(2);
+   S3 = S2;
+   S3.stampapila();
+   if(S3==S2) {
+       cout<<"uguali";
+   }
     return 0;
 }

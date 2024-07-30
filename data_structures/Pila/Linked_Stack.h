@@ -117,13 +117,12 @@ bool Linked_Stack<T>::operator== (const Linked_Stack<T> &s2) {
 }
 
 template<class T>
-void Linked_Stack<T>::stampapila () const {
+void Linked_Stack<T>::stampapila() const {
     cout << "< ";
-    Nodo_Stack<T> *sentinella = new Nodo_Stack<T>;
-    sentinella = testa;
+    Nodo_Stack<T> *sentinella = testa;
     while (sentinella != nullptr) {
-        cout << sentinella->getElem () << " ";
-        sentinella = sentinella->getPred ();
+        cout << sentinella->getElem() << " ";
+        sentinella = sentinella->getPred();
     }
     cout << ">" << endl;
 }
@@ -137,14 +136,13 @@ void Linked_Stack<T>::inpila (const tipo_elem &e) {
 }
 
 template<class T>
-void Linked_Stack<T>::fuoripila () {
-    if (!pilavuota ()) { //precondizione
+void Linked_Stack<T>::fuoripila() {
+    if (!pilavuota()) { // Precondizione
         Nodo_Stack<T> *tmp = testa;
-        testa = testa->getPred (); //postcondizione
-        tmp = nullptr;
+        testa = testa->getPred(); // Postcondizione
         delete tmp;
     } else {
-        throw std::out_of_range ("PILA VUOTA");
+        throw std::out_of_range("PILA VUOTA");
     }
 }
 
@@ -181,18 +179,12 @@ Linked_Stack<T>::~Linked_Stack () {
 }
 
 template<class T>
-Linked_Stack<T>::Linked_Stack (const Linked_Stack<T> &copia) {
-    Linked_Stack<T> tmp;
+Linked_Stack<T>::Linked_Stack(const Linked_Stack<T> &copia) {
     testa = nullptr;
-    if (!copia.pilavuota ()) {
-        while (copia.testa->getPred () != NULL) {
-            tmp.inpila (copia.leggipila ());
-            copia.fuoripila ();
-        }
-        while (tmp.testa->getPred () != NULL) {
-            this->inpila (tmp.leggipila ());
-            tmp.fuoripila ();
-        }
+    Nodo_Stack<T> *tmp1 = copia.testa;
+    while (tmp1 != nullptr) {
+        inpila(tmp1->getElem());
+        tmp1 = tmp1->getPred();
     }
 }
 
@@ -224,7 +216,7 @@ Nodo_Stack<T> *Nodo_Stack<T>::getPred () const {
 
 template<class T>
 Nodo_Stack<T>::~Nodo_Stack () {
-    delete Pred;
+
 }
 
 template<class T>

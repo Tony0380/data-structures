@@ -76,7 +76,7 @@ Stack_Vector<T> &Stack_Vector<T>::operator= (const Stack_Vector<T> &s2) {
         this->testa = s2.testa;
         this->dimensione = s2.dimensione;
         this->elementi = new tipo_elem[this->dimensione];
-        for (int i = 0; i < this->dimensione; i++) {
+        for (int i = 0; i < this->testa; i++) {
             this->elementi[i] = s2.elementi[i];
         }
     }
@@ -93,7 +93,7 @@ Stack_Vector<T>::Stack_Vector (const Stack_Vector &S) {
     this->testa = S.testa;
     this->dimensione = S.dimensione;
     this->elementi = new tipo_elem[this->dimensione];
-    for (int i = 0; i < this->dimensione; i++) {
+    for (int i = 0; i < this->testa; i++) {
         this->elementi[i] = S.elementi[i];
     }
 }
@@ -105,8 +105,8 @@ Stack_Vector<T>::~Stack_Vector () {
 
 template<class T>
 void Stack_Vector<T>::cambiadimensione () {
-    tipo_elem *tmp = new tipo_elem[dimensione];
-    for (int i = 0; i < dimensione; i++) {
+    tipo_elem *tmp = new tipo_elem[dimensione*2];
+    for (int i = 0; i < testa; i++) {
         tmp[i] = this->elementi[i];
     }
     delete[] this->elementi;
@@ -137,7 +137,11 @@ typename Stack_Vector<T>::tipo_elem Stack_Vector<T>::leggipila () const {
 
 template<class T>
 void Stack_Vector<T>::fuoripila () {
-    this->testa -= 1; //postcondizione
+    if(testa > 0) {
+        this->testa -= 1; //postcondizione
+    } else {
+        throw std::out_of_range ("Pila vuota");
+    }
 }
 
 template<class T>
