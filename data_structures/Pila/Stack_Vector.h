@@ -26,6 +26,7 @@ public:
     ~Stack_Vector();
 
     //ridefinizione dei metodi virtuali puri della classe Stack
+
     void creapila();
 
     bool pilavuota() const;
@@ -37,7 +38,14 @@ public:
     void inpila(const tipo_elem &);
 
     //operatori ausiliari
+
     void stampapila() const;
+
+    //sovraccarico operatori
+
+    Stack_Vector<T> &operator = (const Stack_Vector<T>&);
+
+    bool operator == (const Stack_Vector<T>&);
 private:
     void cambiadimensione();
     const int DIM_INIZIALE = 1;
@@ -45,6 +53,33 @@ private:
     int dimensione;
     int testa;
 };
+
+template<class T>
+bool Stack_Vector<T>::operator==(const Stack_Vector<T> & s2) {
+    if(testa != s2.testa) {
+        return false;
+    }
+    for(int i = 0; i < testa; i++) {
+        if(elementi[i] != s2.elementi[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+template<class T>
+Stack_Vector<T> &Stack_Vector<T>::operator=(const Stack_Vector<T> &s2) {
+    if(this != &s2) {
+        delete[] elementi;
+        this->testa = s2.testa;
+        this->dimensione = s2.dimensione;
+        this->elementi = new tipo_elem[this->dimensione];
+        for(int i = 0; i < this->dimensione; i++) {
+            this->elementi[i] = s2.elementi[i];
+        }
+    }
+    return *this;
+}
 
 template<class T>
 Stack_Vector<T>::Stack_Vector() {
@@ -108,7 +143,6 @@ void Stack_Vector<T>::inpila(const tipo_elem & elem) {
     if( this->testa ==  this->dimensione) {
         this->cambiadimensione();
     }
-
     this->testa += 1;
     this->elementi[testa - 1] = elem; //postcondizione
 }

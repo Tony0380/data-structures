@@ -86,6 +86,7 @@ public:
     void stampalista () const;
 
     // sovraccarico operatori
+
     Linked_List<T> &operator= (const Linked_List<T> &);
 
     bool operator== (const Linked_List<T> &);

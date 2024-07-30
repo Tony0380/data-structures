@@ -10,8 +10,7 @@
 using namespace std;
 
 int main() {
-    Linked_List<int> l = Linked_List<int>();
-
+    Linked_List<int> l,l2 = Linked_List<int>();
     l.crealista();
     cout << "Lista vuota: " << l.listavuota() << endl;
     Nodo_Lista<int>* p = l.primolista();

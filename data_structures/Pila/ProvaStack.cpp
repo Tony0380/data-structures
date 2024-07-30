@@ -9,13 +9,17 @@ using namespace std;
 
 int main () {
     Linked_Stack<int> S;
-    S.inpila(1);
-    S.stampapila();
-    S.inpila(2);
-    S.inpila(3);
-    S.stampapila();
-    S.fuoripila();
-    S.stampapila();
-    cout<<S.leggipila()<<endl;
+    Stack_Vector<int> S2,S3;
+
+    S2.inpila(1);
+    S2.inpila(1);
+    S2.inpila(1);
+    S2.inpila(1);
+    S2.inpila(1);
+    S2.inpila(1);
+    S2.inpila(1);
+    S3.inpila(1);
+    S3 = S2;
+    S3.stampapila();
     return 0;
 }
