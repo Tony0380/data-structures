@@ -12,10 +12,9 @@
 using namespace std;
 
 template<class T>
-class Stack_Vector : public Stack<T,int> {
+class Stack_Vector : public Stack<T> {
 public:
-    typedef typename Stack<T, int>::tipo_elem tipo_elem;
-    typedef typename Stack<T, int>::posizione posizione;
+    typedef typename Stack<T>::tipo_elem tipo_elem;
 
     //costruttore vuoto
     Stack_Vector();

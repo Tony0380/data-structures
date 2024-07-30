@@ -7,11 +7,10 @@
 
 #include <iostream>
 
-template <typename T,typename P>
+template <typename T>
 class Stack {
 public:
     typedef T tipo_elem;
-    typedef P posizione;
 
     virtual void creapila() = 0;
     virtual bool pilavuota() const = 0;

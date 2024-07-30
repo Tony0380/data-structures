@@ -18,9 +18,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update Pila">
+    <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Lista/Linked_List.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Lista/Linked_List.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Pila/Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Stack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Pila/Stack_Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Stack_Vector.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +109,7 @@
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="C/C++ File.ProvaStack.cpp">
+  <component name="RunManager" selected="C/C++ File.ProvaLista.cpp">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -126,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="C/C++ File.ProvaStack.cpp" />
         <item itemvalue="C/C++ File.ProvaLista.cpp" />
+        <item itemvalue="C/C++ File.ProvaStack.cpp" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +162,7 @@
       <workItem from="1722182113701" duration="3857000" />
       <workItem from="1722238287961" duration="3308000" />
       <workItem from="1722243480763" duration="12794000" />
-      <workItem from="1722345660808" duration="2526000" />
+      <workItem from="1722345660808" duration="5081000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -345,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722347739798</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722348280141</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1722348280141</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +385,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="Update Lista" />
     <MESSAGE value="Update Pila" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Pila" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
