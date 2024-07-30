@@ -18,7 +18,7 @@ public:
 
     //costruttori
     Nodo_Lista();
-    Nodo_Lista(tipo_elem);
+    Nodo_Lista(const tipo_elem&);
 
     //distruttore
     ~Nodo_Lista();
@@ -259,7 +259,7 @@ void Nodo_Lista<T>::setPred(Nodo_Lista<T> *newPred) {
 }
 
 template <class T>
-Nodo_Lista<T>::Nodo_Lista(Nodo_Lista::tipo_elem newElem) {
+Nodo_Lista<T>::Nodo_Lista(const Nodo_Lista::tipo_elem& newElem) {
     this->Elem = newElem;
     this->Next = NULL;
     this->Pred = NULL;
