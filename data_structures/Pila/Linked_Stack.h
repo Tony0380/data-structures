@@ -18,7 +18,7 @@ public:
     //costruttori:
     Nodo_Stack();
 
-    Nodo_Stack(tipo_elem);
+    Nodo_Stack(const tipo_elem&);
 
     //distruttore
     ~Nodo_Stack();
@@ -35,6 +35,42 @@ public:
 private:
     Nodo_Stack *Pred;
     tipo_elem Elem;
+};
+
+template<class T>
+void Nodo_Stack<T>::setElem(const tipo_elem & newElem) {
+    this->Elem = newElem;
+}
+
+template<class T>
+typename Nodo_Stack<T>::tipo_elem Nodo_Stack<T>::getElem() const {
+    return this->Elem;
+}
+
+template<class T>
+void Nodo_Stack<T>::setPred(Nodo_Stack * newPred) {
+    this->Pred = newPred;
+}
+
+template<class T>
+Nodo_Stack<T> *Nodo_Stack<T>::getPred() const {
+    return this->Pred;
+}
+
+template<class T>
+Nodo_Stack<T>::~Nodo_Stack() {
+    delete Pred;
+}
+
+template<class T>
+Nodo_Stack<T>::Nodo_Stack(const tipo_elem& e) {
+    this->Pred = NULL;
+    this->Elem = e;
+}
+
+template<class T>
+Nodo_Stack<T>::Nodo_Stack() {
+    this->Pred = NULL;
 }
 
 #endif //DATA_STRUCTURES_LINKED_STACK_H
