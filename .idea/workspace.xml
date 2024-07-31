@@ -19,10 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/data_structures/Coda/Linked_Queue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Coda/Linked_Queue.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Coda/Linked_Queue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Coda/ProvaCoda.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Coda/ProvaCoda.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,11 +110,6 @@
     </key>
   </component>
   <component name="RunManager" selected="C/C++ File.ProvaCoda.cpp">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProvaCoda.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="data-structures" TARGET_NAME="ProvaCoda.cpp" CONFIG_NAME="ProvaCoda.cpp">
       <option name="sourceFile" value="data_structures\Coda\ProvaCoda.cpp" />
       <method v="2">
@@ -180,7 +173,8 @@
       <workItem from="1722413544286" duration="279000" />
       <workItem from="1722413861356" duration="2282000" />
       <workItem from="1722416188857" duration="8989000" />
-      <workItem from="1722432444069" duration="5955000" />
+      <workItem from="1722432444069" duration="7038000" />
+      <workItem from="1722440478217" duration="975000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -470,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722432917610</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722438646474</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1722438646474</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

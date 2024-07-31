@@ -83,6 +83,47 @@ private:
 };
 
 template<class T>
+bool Linked_Queue<T>::operator==(const Linked_Queue<T> &c2) {
+    Nodo_Queue<T>* sentinella1 = testa->getPred();
+    Nodo_Queue<T>* sentinella2 = c2.testa->getPred();
+    while(sentinella1 != testa && sentinella2 != c2.testa) {
+        if(sentinella1->getElem() != sentinella2->getElem()) {
+            return false;
+        }
+        sentinella1 = sentinella1->getPred();
+        sentinella2 = sentinella2->getPred();
+        if((sentinella1 != testa && sentinella2 == c2.testa) || (sentinella1 == testa && sentinella2 != c2.testa)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+template<class T>
+Linked_Queue<T> &Linked_Queue<T>::operator=(const Linked_Queue<T> &copia) {
+    if(this != &copia) {
+        delete testa;
+        creacoda();
+        Nodo_Queue<T>* sentinella = copia.testa->getPred();
+        while(sentinella != copia.testa) {
+            incoda(sentinella->getElem());
+            sentinella = sentinella->getPred();
+        }
+    }
+    return *this;
+}
+
+template<class T>
+Linked_Queue<T>::Linked_Queue(const Linked_Queue &copia) {
+    creacoda();
+    Nodo_Queue<T>* sentinella = copia.testa->getPred();
+    while(sentinella != copia.testa) {
+        incoda(sentinella->getElem());
+        sentinella = sentinella->getPred();
+    }
+}
+
+template<class T>
 Linked_Queue<T>::~Linked_Queue() {
     delete testa;
 }

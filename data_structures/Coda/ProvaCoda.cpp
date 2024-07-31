@@ -14,6 +14,8 @@ int main() {
     Q1.incoda(2);
     Q1.incoda(3);
     Q1.fuoricoda();
+    Q2 = Q1;
+    Q2.stampacoda();
     Q1.stampacoda();
-    cout<<Q1.leggicoda();
+    if(Q1 == Q2) cout<<123;
 }
