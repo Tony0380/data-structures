@@ -8,8 +8,8 @@
 using namespace std;
 
 int main () {
-    Linked_Stack<int> S;
-    Stack_Vector<int> S2,S3;
+    Linked_Stack<int> S2,S3;
+    Stack_Vector<int> S;
 
     S2.inpila(1);
     S2.inpila(1);
@@ -21,6 +21,7 @@ int main () {
    S3.inpila(2);
    S3 = S2;
    S3.stampapila();
+   S2.stampapila();
    if(S3==S2) {
        cout<<"uguali";
    }

@@ -101,9 +101,6 @@ Linked_Stack<T> &Linked_Stack<T>::operator= (const Linked_Stack<T> &s2) {
 
 template<class T>
 bool Linked_Stack<T>::operator== (const Linked_Stack<T> &s2) {
-    if (testa != s2.testa) {
-        return false;
-    }
     Nodo_Stack<T> *tmp1 = testa;
     Nodo_Stack<T> *tmp2 = s2.testa;
     while (tmp1 != nullptr) {
