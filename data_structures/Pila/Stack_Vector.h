@@ -52,8 +52,8 @@ private:
 
     const int DIM_INIZIALE = 1;
     tipo_elem *elementi;
-    int dimensione;
-    int testa;
+    int dimensione{};
+    int testa{};
 };
 
 template<class T>

@@ -52,9 +52,35 @@ private:
 
     const int DIM_INIZIALE = 1;
     tipo_elem *elementi;
-    int lunghezza{};
-    int dimensione{};
+    int lunghezza;
+    int dimensione;
 };
+
+template<class T>
+bool Queue_Vector<T>::operator== (const Queue_Vector<T> &q2) {
+    if (lunghezza != q2.lunghezza) {
+        return false;
+    }
+    for (int i = 0; i < lunghezza; i++) {
+        if (elementi[i] != q2.elementi[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+template<class T>
+Queue_Vector<T> &Queue_Vector<T>::operator= (const Queue_Vector<T> &copia) {
+    if (this != &copia) {
+        delete[] elementi;
+        lunghezza = 0;
+        elementi = new tipo_elem[DIM_INIZIALE];
+        for (int i = copia.lunghezza - 1; i >= 0; i--) {
+            incoda (copia.elementi[i]);
+        }
+    }
+    return *this;
+}
 
 template<class T>
 void Queue_Vector<T>::cambiadimensione () {
@@ -70,7 +96,7 @@ void Queue_Vector<T>::cambiadimensione () {
 template<class T>
 void Queue_Vector<T>::stampacoda () const {
     cout << "< ";
-    for (int i = 0; i < this->testa; i++) {
+    for (int i = 0; i < this->lunghezza; i++) {
         cout << this->elementi[i] << " ";
     }
     cout << ">" << endl;
