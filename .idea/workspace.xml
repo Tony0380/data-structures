@@ -19,9 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/data_structures/Coda/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/Linked_Stack.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Pila/ProvaStack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Pila/ProvaStack.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/iCloudDrive/Università/Repository/data-structures/data_structures/Pila&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/iCloudDrive/Università/Repository/data-structures/data_structures/Coda&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,6 +99,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Coda" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Pila" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -162,7 +162,8 @@
       <workItem from="1722373271419" duration="912000" />
       <workItem from="1722374401256" duration="3267000" />
       <workItem from="1722413544286" duration="279000" />
-      <workItem from="1722413861356" duration="668000" />
+      <workItem from="1722413861356" duration="2282000" />
+      <workItem from="1722416188857" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -420,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722414327959</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722414580646</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1722414580646</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
