@@ -13,4 +13,5 @@ add_executable(data_structures
         data_structures/Pila/ProvaStack.cpp
         data_structures/Pila/Stack_Vector.h
         data_structures/Coda/Queue_Vector.h
+        data_structures/Coda/Linked_Queue.h
 )

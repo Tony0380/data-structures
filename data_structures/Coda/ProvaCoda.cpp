@@ -6,24 +6,14 @@
 #include <stdexcept>
 
 #include "Queue_Vector.h"
+#include "Linked_Queue.h"
 
 int main() {
-    Queue_Vector<int> Q1,Q2;
+    Linked_Queue<int> Q1,Q2;
     Q1.incoda(1);
-    Q2.incoda(2);
-    Q2.incoda(3);
-    Q2.incoda(4);
-    Q2.stampacoda();
-    Q2.fuoricoda();
-    Q2.stampacoda();
-    if(Q1 == Q2) {
-        cout<<"si";
-    }
-    Q1 = Q2;
-    Q1.stampacoda();
+    Q1.incoda(2);
+    Q1.incoda(3);
     Q1.fuoricoda();
-    Q1.incoda(9);
-    if(Q1 == Q2) {
-        cout<<"si";
-    }
+    Q1.stampacoda();
+    cout<<Q1.leggicoda();
 }
