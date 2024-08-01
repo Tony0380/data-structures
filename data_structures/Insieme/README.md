@@ -30,10 +30,10 @@
     * insiemevuoto : (insieme) → boolean
     * appartiene : (tipoelem, insieme) → boolean
     * inserisci : (tipoelem, insieme) → insieme
-    * cancella: (tipoelem, insieme) → insieme
-    * unione (insieme, insieme) → insieme
-    * intersezione (insieme, insieme) → insieme
-    * differenza (insieme, insieme) → insieme
+    * cancella : (tipoelem, insieme) → insieme
+    * unione : (insieme, insieme) → insieme
+    * intersezione : (insieme, insieme) → insieme
+    * differenza : (insieme, insieme) → insieme
 
 ### Specifica Semantica
 * Tipi:
@@ -58,4 +58,34 @@
     * POST: C = A ∩ B
   * **differenza(A, B) = C**
     * POST: C = A \ B
-  
+
+<h1> mfset </h1>
+
+* Un mfset è una partizione di un insieme finito in sottoinsiemi disgiunti detti componenti
+* le operazioni consentite permettono di:
+  * Stabilire a quale componente appartiene un elemento generico
+  * Unire due componenti distinte in una sola componente lasciando inalterate le altre componenti rimanenti
+
+### Specifica Sintattica
+
+* Tipi: insieme, boolean, tipoelem, mfset, componente
+* Operatori:
+  * creamfset : (insieme) → mfset
+  * fondi : (tipoelem, tipoelem, mfset) → mfset
+  * trova: (tipoelem, mfset) → componente
+
+### Specifica Semantica
+
+* Tipi:
+  * insieme = famiglia di insiemi costituita da elementi di tipo tipoelem
+  * mfset = famiglia di partizioni di insiemi di elementi di tipo tipoelem
+  * componente = sottoinsieme di insieme, che è elemento di mfset
+* Operatori: 
+  * **creamfset(A) = S**
+    * POST: S è una famiglia di n =|A| componenti c1,c2,cn ognuno delle quali contiene uno e un solo elemento di A e tali che ∪ ci = A, 1<= i <= n
+  * **fondi(x, y, S) = S'**
+    * PRE: x e y appartengono a componenti distinte cx e cy di S
+    * POST: S' è costituito da tutte le componenti che non contengono x e y e da una nuova componente ottenuta dall'unione delle due componenti cx e cy
+  * **trova(x, S) = c**
+    * PRE: x appartiene ad una componente di S
+    * POST: c è l'identificatore della componente a cui x appartiene
