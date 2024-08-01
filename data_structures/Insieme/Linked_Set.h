@@ -70,15 +70,31 @@ public:
 
     void cancella (const tipo_elem &);
 
-    Set<T> unione (const Set<T> &) const;
+    Linked_Set<T> unione (const Linked_Set<T> &) const;
 
-    Set<T> intersezione (const Set<T> &) const;
+    Linked_Set<T> intersezione (const Linked_Set<T> &) const;
 
-    Set<T> differenza (const Set<T> &) const;
+    Linked_Set<T> differenza (const Linked_Set<T> &) const;
 
 private:
     Nodo_Insieme<T> *testa;
 };
+
+template<class T>
+Linked_Set<T> Linked_Set<T>::unione (const Linked_Set<T> &I2) const {
+    Linked_Set<T> U;
+    Nodo_Insieme<T> *sentinella = testa->getNext ();
+    while (sentinella != testa) {
+        U.inserisci (sentinella->getElem ());
+        sentinella = sentinella->getNext ();
+    }
+    sentinella = I2.testa->getNext ();
+    while (sentinella != I2.testa) {
+        U.inserisci (sentinella->getElem ());
+        sentinella = sentinella->getNext ();
+    }
+    return *U;
+}
 
 template<class T>
 void Linked_Set<T>::cancella (const tipo_elem &e) {
@@ -111,11 +127,7 @@ void Linked_Set<T>::inserisci (const tipo_elem &e) {
         nuovoNodo->setNext (testa->getNext ());
         testa->getNext ()->setPred (nuovoNodo);
         testa->setNext (nuovoNodo);
-    } else {
-        throw ::out_of_range ("elemento doppio");
     }
-
-
 }
 
 template<class T>
