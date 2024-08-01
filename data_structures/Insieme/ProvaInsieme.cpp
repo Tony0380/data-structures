@@ -20,7 +20,9 @@ int main() {
     cout<<C;
     cout<<D;
     cout<<E;
-
-    if(C.appartiene(1)&&C.appartiene(4)) cout<<"ciao";
+    A=B;
+    cout<<A;
+    cout<<B;
+    if(A==B) cout<<"ciao";
     return 0;
 }

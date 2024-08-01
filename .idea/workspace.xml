@@ -22,7 +22,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Insieme/Linked_Set.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Insieme/Linked_Set.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Insieme/ProvaInsieme.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Insieme/ProvaInsieme.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Insieme/Set.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Insieme/Set.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +192,7 @@
       <workItem from="1722455319803" duration="549000" />
       <workItem from="1722458757874" duration="90000" />
       <workItem from="1722459492357" duration="1628000" />
-      <workItem from="1722499414372" duration="16325000" />
+      <workItem from="1722499414372" duration="17436000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -539,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722512204097</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722516247753</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1722516247753</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

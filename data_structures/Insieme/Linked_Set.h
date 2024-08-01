@@ -89,6 +89,30 @@ private:
 };
 
 template<class T>
+bool Linked_Set<T>::operator==(const Linked_Set &i2) {
+    Nodo_Insieme<T>* sentinella1 = testa->getPred();
+    Nodo_Insieme<T>* sentinella2 = i2.testa->getPred();
+    while(sentinella1!=testa) {
+        if(!i2.appartiene(sentinella1->getElem())){
+            return false;
+        }
+        sentinella1 = sentinella1->getNext();
+    }
+    while(sentinella2!=i2.testa) {
+        if(!appartiene(sentinella2->getElem())) {
+            return false;
+        }
+        sentinella2 = sentinella2->getNext();
+    }
+    return true;
+}
+
+template<class T>
+Linked_Set<T>::Linked_Set(const Linked_Set &copia) {
+    *this = copia;
+}
+
+template<class T>
 Linked_Set<T> &Linked_Set<T>::operator=(const Linked_Set &copia) {
     if (this!= &copia) {
         delete testa;
