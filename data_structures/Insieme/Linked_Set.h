@@ -81,6 +81,24 @@ private:
 };
 
 template<class T>
+Linked_Set<T> Linked_Set<T>::differenza (const Linked_Set<T> &) const {
+    return Linked_Set<T> ();
+}
+
+template<class T>
+Linked_Set<T> Linked_Set<T>::intersezione (const Linked_Set<T> &I2) const {
+    Linked_Set<T> I;
+    Nodo_Insieme<T> *sentinella = testa->getNext ();
+    while (sentinella != testa) {
+        if (I2.appartiene (sentinella->getElem ())) {
+            I.inserisci (sentinella->getElem ());
+        }
+        sentinella = sentinella->getNext ();
+    }
+    return I;
+}
+
+template<class T>
 Linked_Set<T> Linked_Set<T>::unione (const Linked_Set<T> &I2) const {
     Linked_Set<T> U;
     Nodo_Insieme<T> *sentinella = testa->getNext ();
@@ -93,7 +111,7 @@ Linked_Set<T> Linked_Set<T>::unione (const Linked_Set<T> &I2) const {
         U.inserisci (sentinella->getElem ());
         sentinella = sentinella->getNext ();
     }
-    return *U;
+    return U;
 }
 
 template<class T>
