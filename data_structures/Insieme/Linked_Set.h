@@ -81,6 +81,29 @@ private:
 };
 
 template<class T>
+void Linked_Set<T>::cancella (const tipo_elem &e) {
+    if (appartiene (e)) { //precondizione
+        bool trovato = false;
+        Nodo_Insieme<T> *sentinella = testa->getNext ();
+        while (!trovato) {
+            if (sentinella->getElem () == e) {
+                trovato = true;
+                sentinella->getNext ()->setPred (sentinella->getPred ());
+                sentinella->getPred ()->setNext (sentinella->getNext ());
+            } else {
+                sentinella = sentinella->getNext ();
+            }
+        }
+        delete sentinella;
+    }
+}
+
+template<class T>
+Linked_Set<T>::~Linked_Set () {
+    delete testa;
+}
+
+template<class T>
 void Linked_Set<T>::inserisci (const tipo_elem &e) {
     if (!appartiene (e)) { //precondizione
         Nodo_Insieme<T> *nuovoNodo = new Nodo_Insieme (e);
