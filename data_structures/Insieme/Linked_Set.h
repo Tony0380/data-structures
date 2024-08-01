@@ -10,6 +10,7 @@
 #include "Set.h"
 #include <iostream>
 #include <stdexcept>
+
 using namespace std;
 
 template<class T>
@@ -43,34 +44,53 @@ private:
     Nodo_Insieme *Next;
     tipo_elem Elem;
 };
+
 template<class T>
 class Linked_Set : public Set<T> {
 public:
     typedef typename Set<T>::tipo_elem tipo_elem;
 
     //costruttore vuoto
-    Linked_Set();
+    Linked_Set ();
 
     //costruttore di copia
-    Linked_Set(const Linked_Set&);
+    Linked_Set (const Linked_Set &);
 
     //distruttore
-    ~Linked_Set();
+    ~Linked_Set ();
 
     //ridefinizione dei metodi virtuali puri della classe Set
-    void creainsieme();
-    bool insiemevuoto() const;
-    bool appartiene(const tipo_elem &) const;
-    void inserisci(const tipo_elem&);
-    void cancella(const tipo_elem &);
-    Linked_Set<T> unione(const Linked_Set<T>&) const;
-    Linked_Set<T> intersezione(const Linked_Set<T>&) const;
-    Linked_Set<T> differenza(const Linked_Set<T>&) const;
+    void creainsieme ();
+
+    bool insiemevuoto () const;
+
+    bool appartiene (const tipo_elem &) const;
+
+    void inserisci (const tipo_elem &);
+
+    void cancella (const tipo_elem &);
+
+    Set<T> unione (const Set<T> &) const;
+
+    Set<T> intersezione (const Set<T> &) const;
+
+    Set<T> differenza (const Set<T> &) const;
 
 private:
-    Nodo_Insieme<T>* testa;
+    Nodo_Insieme<T> *testa;
 };
 
+template<class T>
+void Linked_Set<T>::creainsieme () {
+    testa = new Nodo_Insieme<T>;
+    testa->setNext (testa);
+    testa->setPred (testa);
+}
+
+template<class T>
+Linked_Set<T>::Linked_Set () {
+    creainsieme ();
+}
 
 
 template<class T>
