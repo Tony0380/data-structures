@@ -81,6 +81,38 @@ private:
 };
 
 template<class T>
+void Linked_Set<T>::inserisci (const tipo_elem &e) {
+    if (!appartiene (e)) { //precondizione
+        Nodo_Insieme<T> *nuovoNodo = new Nodo_Insieme (e);
+        nuovoNodo->setPred (testa);
+        nuovoNodo->setNext (testa->getNext ());
+        testa->getNext ()->setPred (nuovoNodo);
+        testa->setNext (nuovoNodo);
+    } else {
+        throw ::out_of_range ("elemento doppio");
+    }
+
+
+}
+
+template<class T>
+bool Linked_Set<T>::appartiene (const tipo_elem &e) const {
+    Nodo_Insieme<T> *sentinella = testa->getNext ();
+    while (sentinella != testa) {
+        if (sentinella->getElem () == e) {
+            return true;
+        }
+        sentinella = sentinella->getNext ();
+    }
+    return false;
+}
+
+template<class T>
+bool Linked_Set<T>::insiemevuoto () const {
+    return (testa->getNext () == testa);
+}
+
+template<class T>
 void Linked_Set<T>::creainsieme () {
     testa = new Nodo_Insieme<T>;
     testa->setNext (testa);
