@@ -16,9 +16,6 @@ public:
     virtual bool appartiene(const tipo_elem &) const = 0;
     virtual void inserisci(const tipo_elem &) = 0;
     virtual void cancella(const tipo_elem &) = 0;
-    virtual Set<T> unione(const Set<T> &) const = 0;
-    virtual Set<T> intersezione(const Set<T> &) const = 0;
-    virtual Set<T> differenza(const Set<T> &) const = 0;
 
 };
 #endif //DATA_STRUCTURES_SET_H

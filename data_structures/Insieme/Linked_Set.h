@@ -76,13 +76,55 @@ public:
 
     Linked_Set<T> differenza (const Linked_Set<T> &) const;
 
+    //sovraccarico degli operatori
+
+    template<class T1>
+    friend ostream &operator<<(ostream &, const Linked_Set<T1> &);
+
+    bool operator==(const Linked_Set &);
+
+    Linked_Set &operator=(const Linked_Set &);
 private:
     Nodo_Insieme<T> *testa;
 };
 
 template<class T>
-Linked_Set<T> Linked_Set<T>::differenza (const Linked_Set<T> &) const {
-    return Linked_Set<T> ();
+Linked_Set<T> &Linked_Set<T>::operator=(const Linked_Set &copia) {
+    if (this!= &copia) {
+        delete testa;
+        creainsieme();
+        Nodo_Insieme<T>* sentinella = copia.testa->getNext();
+        while(sentinella!=copia.testa) {
+            inserisci(sentinella->getElem());
+            sentinella = sentinella->getNext();
+        }
+    }
+    return *this;
+}
+
+template<class T1>
+ostream &operator<<(ostream &os, const Linked_Set <T1> &s) {
+    Nodo_Insieme<T1> *tmp = s.testa->getNext();
+    os<< "{ ";
+    while(tmp != s.testa) {
+        os<<tmp->getElem()<<" ";
+        tmp = tmp->getNext();
+    }
+    os<<"}"<<endl;
+    return os;
+}
+
+template<class T>
+Linked_Set<T> Linked_Set<T>::differenza (const Linked_Set<T> &I2) const {
+    Linked_Set<T> D;
+    Nodo_Insieme<T> *sentinella = testa->getNext ();
+    while (sentinella != testa ) {
+        if(!I2.appartiene(sentinella->getElem())) {
+            D.inserisci(sentinella->getElem());
+        }
+        sentinella = sentinella->getNext();
+    }
+    return D;
 }
 
 template<class T>
