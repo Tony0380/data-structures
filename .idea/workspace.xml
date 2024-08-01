@@ -19,9 +19,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/data_structures/Insieme/Linked_Set.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_structures/Insieme/ProvaInsieme.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_structures/Insieme/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_structures/Insieme/Set.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Coda/Linked_Queue.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Coda/Linked_Queue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Coda/ProvaCoda.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Coda/ProvaCoda.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,33 +78,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ File.ProvaCoda.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ File.ProvaLista.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ File.ProvaStack.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Debug.Project.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/iCloudDrive/Università/Repository/data-structures/data_structures/Coda&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.ProvaCoda.cpp.executor": "Run",
+    "C/C++ File.ProvaLista.cpp.executor": "Run",
+    "C/C++ File.ProvaStack.cpp.executor": "Run",
+    "CMake Debug.Project.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/iCloudDrive/Università/Repository/data-structures/data_structures/Insieme",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Insieme" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Coda" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Pila" />
     </key>
@@ -110,6 +115,11 @@
     </key>
   </component>
   <component name="RunManager" selected="C/C++ File.ProvaCoda.cpp">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProvaCoda.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="data-structures" TARGET_NAME="ProvaCoda.cpp" CONFIG_NAME="ProvaCoda.cpp">
       <option name="sourceFile" value="data_structures\Coda\ProvaCoda.cpp" />
       <method v="2">
@@ -175,6 +185,10 @@
       <workItem from="1722416188857" duration="8989000" />
       <workItem from="1722432444069" duration="7038000" />
       <workItem from="1722440478217" duration="975000" />
+      <workItem from="1722455319803" duration="549000" />
+      <workItem from="1722458757874" duration="90000" />
+      <workItem from="1722459492357" duration="1628000" />
+      <workItem from="1722499414372" duration="4632000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
