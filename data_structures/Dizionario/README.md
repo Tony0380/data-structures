@@ -31,7 +31,7 @@
     * POST: b = vero se esiste una coppia <k', v> ∈ D tale che k' = k, b = falso altrimenti
   * **inserisci(<k, v>, D) = D'**
     * POST: D' = D ∪ {<k, v>} se non esiste una coppia <k', v'> ∈ D tale che k' = k;
-            
+    
        D' = D \ {<k', v'>} ∪ { <k, v> } se esiste già una coppia <k', v'> ∈ D tale che k' = k;
   * **cancella(k, D) = D'**
     * PRE: esiste una coppia <k', v'> ∈ D tale che k' = k

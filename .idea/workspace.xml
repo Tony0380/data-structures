@@ -19,8 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/data_structures/Dizionario/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structures/Dizionario/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Dizionario/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +192,7 @@
       <workItem from="1722499414372" duration="19301000" />
       <workItem from="1722518953889" duration="5698000" />
       <workItem from="1722528614101" duration="1998000" />
-      <workItem from="1722587676384" duration="10605000" />
+      <workItem from="1722587676384" duration="10704000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -579,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722593169322</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722603099955</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1722603099955</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
