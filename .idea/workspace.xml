@@ -19,8 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/data_structures/Dizionario/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/Insieme/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Insieme/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +60,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="ProvaInsieme.cpp" />
+  </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
     <option name="majorVersion" value="2023" />
@@ -88,7 +91,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/iCloudDrive/Università/Repository/data-structures/data_structures/Insieme&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/iCloudDrive/Università/Repository/data-structures/data_structures/Dizionario&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -101,6 +104,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Dizionario" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Insieme" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Coda" />
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures\Pila" />
@@ -187,7 +191,9 @@
       <workItem from="1722458757874" duration="90000" />
       <workItem from="1722459492357" duration="1628000" />
       <workItem from="1722499414372" duration="19301000" />
-      <workItem from="1722518953889" duration="773000" />
+      <workItem from="1722518953889" duration="5698000" />
+      <workItem from="1722528614101" duration="1998000" />
+      <workItem from="1722587676384" duration="10605000" />
     </task>
     <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
       <option name="closed" value="true" />
@@ -549,7 +555,31 @@
       <option name="project" value="LOCAL" />
       <updated>1722517153477</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722519757875</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1722519757875</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722588005327</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1722588005327</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722593169322</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1722593169322</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
