@@ -19,7 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/data_structures/Dizionario/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Dizionario/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_structures/Dizionario/Dictionary.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_structures/Dizionario/ProvaDizionario.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,9 +115,15 @@
       <recent name="D:\iCloudDrive\Università\Repository\data-structures\data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="C/C++ File.ProvaInsieme.cpp">
+  <component name="RunManager" selected="C/C++ File.ProvaDizionario.cpp">
     <configuration name="ProvaCoda.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="data-structures" TARGET_NAME="ProvaCoda.cpp" CONFIG_NAME="ProvaCoda.cpp">
       <option name="sourceFile" value="data_structures\Coda\ProvaCoda.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProvaDizionario.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="data-structures" TARGET_NAME="ProvaDizionario.cpp" CONFIG_NAME="ProvaDizionario.cpp">
+      <option name="sourceFile" value="data_structures\Dizionario\ProvaDizionario.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
@@ -140,6 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="C/C++ File.ProvaDizionario.cpp" />
         <item itemvalue="C/C++ File.ProvaInsieme.cpp" />
         <item itemvalue="C/C++ File.ProvaStack.cpp" />
         <item itemvalue="C/C++ File.ProvaLista.cpp" />
@@ -192,15 +201,7 @@
       <workItem from="1722499414372" duration="19301000" />
       <workItem from="1722518953889" duration="5698000" />
       <workItem from="1722528614101" duration="1998000" />
-      <workItem from="1722587676384" duration="10704000" />
-    </task>
-    <task id="LOCAL-00001" summary="Aggiunta Teoria Lista">
-      <option name="closed" value="true" />
-      <created>1721731625312</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1721731625312</updated>
+      <workItem from="1722587676384" duration="11908000" />
     </task>
     <task id="LOCAL-00002" summary="Aggiunta realizzazione lista con vettore">
       <option name="closed" value="true" />
@@ -586,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722603099955</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722603197705</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1722603197706</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
