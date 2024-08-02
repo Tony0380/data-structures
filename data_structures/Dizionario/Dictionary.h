@@ -5,6 +5,7 @@
 #ifndef DATA_STRUCTURES_DICTIONARY_H
 #define DATA_STRUCTURES_DICTIONARY_H
 
+#include "../Lista/Linked_List.h"
 #include <iostream>
 
 template<typename K, typename V>
@@ -30,10 +31,36 @@ public:
 
     void setValore (const valore &);
 
+    //sovraccarico degli operatori
+    bool operator== (const coppia<K, V> &);
+
+    coppia<K, V> &operator= (const coppia<K, V> &);
+
+    template<class K1, class V1>
+    friend ostream &operator<< (ostream &, coppia<K1, V1> &);
+
 private:
     chiave Key;
     valore Value;
 };
+
+template<class K1, class V1>
+ostream &operator<< (ostream &os, coppia<K1, V1> &c) {
+    os << "< " << c.getChiave () << ", " << c.getValore () << " >" << endl;
+    return os;
+}
+
+template<typename K, typename V>
+coppia<K, V> &coppia<K, V>::operator= (const coppia<K, V> &c2) {
+    this->Key = c2.getChiave ();
+    this->Value = c2.getValore ();
+    return *this;
+}
+
+template<typename K, typename V>
+bool coppia<K, V>::operator== (const coppia<K, V> &c2) {
+    return (this->Key == c2.getChiave () && this->Value == c2.getValore ());
+}
 
 template<typename K, typename V>
 void coppia<K, V>::setValore (const valore &newValue) {
