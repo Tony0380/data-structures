@@ -5,8 +5,11 @@
 #ifndef DATA_STRUCTURES_DICTIONARY_H
 #define DATA_STRUCTURES_DICTIONARY_H
 
-#include "../Lista/Linked_List.h"
 #include <iostream>
+#include <ostream>
+#include "myHash.h"
+
+using namespace std;
 
 template<typename K, typename V>
 class coppia {
