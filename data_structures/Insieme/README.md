@@ -59,6 +59,7 @@
   * **differenza(A, B) = C**
     * POST: C = A \ B
 
+___
 <h1> mfset </h1>
 
 * Un mfset è una partizione di un insieme finito in sottoinsiemi disgiunti detti componenti
