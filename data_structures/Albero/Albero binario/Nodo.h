@@ -13,6 +13,10 @@ public:
 
     Nodo ();
 
+    Nodo getPadre () const;
+
+    void setPadre(Nodo *);
+
     Nodo *getSinistro () const;
 
     Nodo *getDestro () const;
@@ -26,10 +30,21 @@ public:
     void setElem (const tipo_elem &);
 
 private:
+    Nodo *padre;
     Nodo *figlioSinistro;
     Nodo *figlioDestro;
     tipo_elem Elemento;
 };
+
+template<typename T>
+void Nodo<T>::setPadre(Nodo* newPadre) {
+    padre = newPadre;
+}
+
+template<typename T>
+Nodo<T> Nodo<T>::getPadre() const {
+    return padre;
+}
 
 template<typename T>
 void Nodo<T>::setElem (const tipo_elem &newElem) {
@@ -65,6 +80,7 @@ template<typename T>
 Nodo<T>::Nodo () {
     figlioDestro = nullptr;
     figlioSinistro = nullptr;
+    padre = nullptr;
 }
 
 #endif //DATA_STRUCTURES_NODO_H
