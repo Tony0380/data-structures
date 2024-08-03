@@ -78,7 +78,7 @@ bool Linked_bintree<T>::binalberovuoto() const {
 template<class T>
 void Linked_bintree<T>::insfigliodestro(Linked_bintree::nodo n, const tipo_elem &e) {
     if(destrovuoto(n)) {
-        nodo nuovonodo = new nodo();
+        nodo nuovonodo = new Nodo<T>();
         nuovonodo->setElem(e);
         nuovonodo->setPadre(n);
         n->setDestro(nuovonodo);
@@ -90,7 +90,7 @@ void Linked_bintree<T>::insfigliodestro(Linked_bintree::nodo n, const tipo_elem 
 template<class T>
 void Linked_bintree<T>::insfigliosinistro(Linked_bintree::nodo n, const tipo_elem &e) {
     if(sinistrovuoto(n)) {
-        nodo nuovonodo = new nodo();
+        nodo nuovonodo = new Nodo<T>();
         nuovonodo->setElem(e);
         nuovonodo->setPadre(n);
         n->setSinistro(nuovonodo);
@@ -102,7 +102,7 @@ void Linked_bintree<T>::insfigliosinistro(Linked_bintree::nodo n, const tipo_ele
 template<class T>
 void Linked_bintree<T>::insbinradice(const tipo_elem &e) {
     if(root == nullptr) {
-        root = new nodo ();
+        root = new Nodo<T>();
         root->setElem(e);
     } else {
         throw std::out_of_range("l'albero ha gia una radice");
@@ -140,7 +140,7 @@ typename Linked_bintree<T>::nodo Linked_bintree<T>::figliosinistro(Linked_bintre
 }
 
 template<class T>
-typename Linked_bintree<T>::nodo Linked_bintree<T>::binpadre(Linked_bintree::nodo  n) const {
+typename Linked_bintree<T>::nodo Linked_bintree<T>::binpadre(Linked_bintree::nodo n) const {
     return n->getPadre();
 }
 
@@ -160,7 +160,7 @@ void Linked_bintree<T>::creabinalbero() {
 
 template<class T>
 Linked_bintree<T>::~Linked_bintree() {
-    delete root;
+    cancsottobinalbero(root);
 }
 
 template<class T>

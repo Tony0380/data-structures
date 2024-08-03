@@ -6,4 +6,5 @@
 
 int main () {
     Linked_bintree<int> T;
+
 }

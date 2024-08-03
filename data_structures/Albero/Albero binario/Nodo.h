@@ -13,7 +13,7 @@ public:
 
     Nodo ();
 
-    Nodo getPadre () const;
+    Nodo *getPadre () const;
 
     void setPadre(Nodo *);
 
@@ -42,7 +42,7 @@ void Nodo<T>::setPadre(Nodo* newPadre) {
 }
 
 template<typename T>
-Nodo<T> Nodo<T>::getPadre() const {
+Nodo<T> *Nodo<T>::getPadre() const {
     return padre;
 }
 
