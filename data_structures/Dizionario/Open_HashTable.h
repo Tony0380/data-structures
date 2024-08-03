@@ -89,11 +89,11 @@ template<typename K, typename V>
 void Open_HashTable<K, V>::inserisci (const Open_HashTable::chiave &k, const Open_HashTable::valore &v) {
     coppia newCoppia (k, v);
     if (!appartiene (newCoppia.getChiave ())) {
-        int k;
+        int k2;
         chiave k1 = newCoppia.getChiave ();
-        k = hashFunction (k1) % DIM;
-        posizione sentinella = tabella[k].primolista ();
-        tabella[k].inslista (newCoppia, sentinella);
+        k2 = hashFunction (k1) % DIM;
+        posizione sentinella = tabella[k2].primolista ();
+        tabella[k2].inslista (newCoppia, sentinella);
     } else {
         cout << "Elemento già presente";
     }
