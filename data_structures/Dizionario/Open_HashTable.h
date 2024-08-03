@@ -174,7 +174,9 @@ bool Open_HashTable<K, V>::dizionariovuoto () const {
 
 template<typename K, typename V>
 Open_HashTable<K, V>::Open_HashTable (const Open_HashTable &d2) {
-    this->tabella->operator= (d2.tabella);
+    for (int i = 0; i < DIM; i++) {
+        tabella[i] = d2.tabella[i];
+    }
 }
 
 template<typename K, typename V>
