@@ -55,7 +55,7 @@ public:
     friend ostream &operator<< (ostream &, Open_HashTable<K1, V1> &);
 
 private:
-    Linked_List<coppia> *tabella; //tabella per utilizzare le liste di trabocco
+    Linked_List<coppia> *tabella; //moltecipli liste per utilizzare le liste di trabocco
     myHash<K> hashFunction;
 };
 

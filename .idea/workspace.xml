@@ -19,7 +19,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc42579-6cc8-4747-a970-4d0a194b1cd3" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structures/Dizionario/Open_HashTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/Dizionario/Open_HashTable.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,15 +204,7 @@
       <workItem from="1722617885494" duration="1857000" />
       <workItem from="1722677628891" duration="4586000" />
       <workItem from="1722682284925" duration="561000" />
-      <workItem from="1722682866154" duration="7124000" />
-    </task>
-    <task id="LOCAL-00009" summary="Update Lista">
-      <option name="closed" value="true" />
-      <created>1722156991437</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1722156991437</updated>
+      <workItem from="1722682866154" duration="7314000" />
     </task>
     <task id="LOCAL-00010" summary="Update Lista">
       <option name="closed" value="true" />
@@ -599,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722689992115</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Update">
+      <option name="closed" value="true" />
+      <created>1722690075821</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1722690075821</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
