@@ -10,7 +10,7 @@ int main() {
     Open_HashTable<int, int> tabella,tabella2;
     coppia A(1,2);
     tabella.inserisci(1,2);
-    tabella.inserisci(11,3);
+    tabella.inserisci(13,3);
     cout<<tabella;
     if(tabella == tabella2) {
         cout<<"si";
