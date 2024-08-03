@@ -1,4 +1,4 @@
-<h1> Albero </h1>
+<h1> Alberi </h1>
 
 * Un albero è un tipo particolare di grafo definito come una coppia
   * **T = (N, A)**
