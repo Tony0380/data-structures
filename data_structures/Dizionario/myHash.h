@@ -15,7 +15,7 @@ using std::string;
 template<typename T>
 class myHash {
 public:
-    size_t operator() (const T Key) {
+    size_t operator() (const T Key) const {
         return size_t (Key);
     }
 };
@@ -23,7 +23,7 @@ public:
 //polimorfismo parametrico ad hoc per il tipo stringa
 template<>
 class myHash<string> {
-    size_t operator() (const string &Key) {
+    size_t operator() (const string &Key) const {
         unsigned long hash_value = 0;
         int length = (int) Key.length ();
         for (int i = 0; i < length; i++)

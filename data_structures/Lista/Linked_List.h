@@ -8,8 +8,6 @@
 #ifndef DATA_STRUCTURES_LINKED_LIST_H
 #define DATA_STRUCTURES_LINKED_LIST_H
 
-#endif //DATA_STRUCTURES_LINKED_LIST_H
-
 using namespace std;
 
 template<class T>
@@ -91,6 +89,8 @@ public:
 
     bool operator== (const Linked_List<T> &);
 
+    template<class T1>
+    friend ostream &operator<< (ostream &, Linked_List<T1> &);
 
 private:
     Nodo_Lista<T> *testa;
@@ -98,19 +98,29 @@ private:
 
 };
 
+template<class T1>
+ostream &operator<< (ostream &os, Linked_List<T1> &l) {
+    os << "{ ";
+    for (Nodo_Lista<T1> *p = l.primolista (); p != l.testa; p = l.succlista (p)) {
+        os << p->getElem () << " ";
+    }
+    os << "}" << endl;
+    return os;
+}
+
 template<class T>
 bool Linked_List<T>::operator== (const Linked_List<T> &l2) {
     if (lunghezza != l2.lunghezza) {
         return false;
     }
-    posizione p1 = primolista();
-    posizione p2 = l2.primolista();
-    while (!finelista(p1)) {
-        if (leggilista(p1) != l2.leggilista(p2)) {
+    posizione p1 = primolista ();
+    posizione p2 = l2.primolista ();
+    while (!finelista (p1)) {
+        if (!(leggilista (p1) == l2.leggilista (p2))) {
             return false;
         }
-        p1 = succlista(p1);
-        p2 = l2.succlista(p2);
+        p1 = succlista (p1);
+        p2 = l2.succlista (p2);
     }
     return true;
 }
@@ -118,13 +128,13 @@ bool Linked_List<T>::operator== (const Linked_List<T> &l2) {
 template<class T>
 Linked_List<T> &Linked_List<T>::operator= (const Linked_List<T> &copia) {
     if (this != &copia) {
-        this->~Linked_List();
-        crealista();
-        Nodo_Lista<T>* p = copia.primolista();
-        Nodo_Lista<T>* q = primolista();
-        while(!copia.finelista(p)) {
-            inslista(copia.leggilista(p),q);
-            p = copia.succlista(p);
+        this->~Linked_List ();
+        crealista ();
+        Nodo_Lista<T> *p = copia.primolista ();
+        Nodo_Lista<T> *q = primolista ();
+        while (!copia.finelista (p)) {
+            inslista (copia.leggilista (p), q);
+            p = copia.succlista (p);
         }
     }
     return *this;
@@ -154,9 +164,12 @@ void Linked_List<T>::stampalista () const {
 template<class T>
 void Linked_List<T>::canclista (Linked_List::posizione &p) {
     if (!finelista (p)) {
+        posizione tmp;
         p->getPred ()->setNext (p->getNext ());
         p->getNext ()->setPred (p->getPred ());
-        delete p;
+        tmp = p;
+        p = p->getNext ();
+        delete tmp;
         lunghezza--;
     }
 }
@@ -287,3 +300,5 @@ template<class T>
 Nodo_Lista<T>::~Nodo_Lista () {
 
 }
+
+#endif //DATA_STRUCTURES_LINKED_LIST_H

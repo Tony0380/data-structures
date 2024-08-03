@@ -53,6 +53,13 @@ ostream &operator<< (ostream &os, coppia<K1, V1> &c) {
     return os;
 }
 
+template<class K1, class V1>
+ostream &operator<<(ostream &os, coppia<K1, V1> &&c) {
+    os << "< " << c.getChiave() << ", " << c.getValore() << " >";
+    return os;
+}
+
+
 template<typename K, typename V>
 coppia<K, V> &coppia<K, V>::operator= (const coppia<K, V> &c2) {
     this->Key = c2.getChiave ();
@@ -64,6 +71,8 @@ template<typename K, typename V>
 bool coppia<K, V>::operator== (const coppia<K, V> &c2) {
     return (this->Key == c2.getChiave () && this->Value == c2.getValore ());
 }
+
+
 
 template<typename K, typename V>
 void coppia<K, V>::setValore (const valore &newValue) {
@@ -111,14 +120,13 @@ public:
 
     virtual bool dizionariovuoto () const = 0;
 
-    virtual bool appartiene (chiave) const = 0;
+    virtual bool appartiene (const chiave &) const = 0;
 
-    virtual void inserisci (coppia) = 0;
+    virtual void inserisci (const coppia &) = 0;
 
-    virtual void cancella (chiave) = 0;
+    virtual void cancella (const chiave &) = 0;
 
-    virtual valore recupera (chiave) const = 0;
-
+    virtual valore recupera (const chiave &) const = 0;
 
 };
 
