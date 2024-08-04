@@ -56,14 +56,15 @@ public:
     void insfigliodestro (nodo, const tipo_elem &);
 
     void stampavistapreordine() const;
+
+    void stampavistapostordine() const;
+
+    void stampavistasimmetrica() const;
     //sovraccarico degli operatori
 
     Linked_bintree<T> &operator= (const Linked_bintree<T> &);
 
     bool operator== (const Linked_bintree<T> &);
-
-    template<class T1>
-    friend ostream &operator<< (ostream &, Linked_bintree<T1> &);
 
 private:
 
@@ -72,7 +73,73 @@ private:
     nodo root;
 
     void stampavistapreordineRic(nodo n) const;
+
+    void stampavistapostordineRic(nodo n) const;
+
+    void stampavistasimmetricaRic(nodo n) const;
 };
+
+template<class T>
+void Linked_bintree<T>::stampavistasimmetrica() const {
+    if (binalberovuoto()) {
+        cout << "Albero vuoto" << endl;
+    } else {
+        stampavistasimmetricaRic(root);
+        cout << endl;
+    }
+}
+
+template<class T>
+void Linked_bintree<T>::stampavistasimmetricaRic(nodo n) const {
+    if (n != nullptr) {
+        stampavistasimmetricaRic(figliosinistro(n));  // Visita il sottoalbero sinistro
+        cout << legginodo(n) << " ";  // Visita il nodo corrente
+        stampavistasimmetricaRic(figliodestro(n));  // Visita il sottoalbero destro
+    }
+}
+
+template<class T>
+Linked_bintree<T>::Linked_bintree(const Linked_bintree &copia) {
+    if(copia.binalberovuoto()) {
+        creabinalbero();
+    } else {
+        root = new Nodo<T>();
+        root->setElem(copia.legginodo(copia.binradice()));
+        nodo n = copia.binradice();
+        nodo n1 = root;
+        while(!copia.destrovuoto(n)) {
+            if(!copia.sinistrovuoto(n)) {
+                insfigliosinistro(n1, copia.legginodo(copia.figliosinistro(n)));
+                n1 = figliosinistro(n1);
+                n = copia.figliosinistro(n);
+            }
+            if(!copia.destrovuoto(n)) {
+                insfigliodestro(n1, copia.legginodo(copia.figliodestro(n)));
+                n1 = figliodestro(n1);
+                n = copia.figliodestro(n);
+            }
+        }
+    }
+}
+
+template<class T>
+void Linked_bintree<T>::stampavistapostordine() const {
+    if (binalberovuoto()) {
+        cout << "Albero vuoto" << endl;
+    } else {
+        stampavistapostordineRic(root);
+        cout << endl;
+    }
+}
+
+template<class T>
+void Linked_bintree<T>::stampavistapostordineRic(nodo n) const {
+    if (n != nullptr) {
+        stampavistapostordineRic(figliosinistro(n));  // Visita il sottoalbero sinistro
+        stampavistapostordineRic(figliodestro(n));  // Visita il sottoalbero destro
+        cout << legginodo(n) << " ";  // Visita il nodo corrente
+    }
+}
 
 template<class T>
 void Linked_bintree<T>::stampavistapreordine() const {
