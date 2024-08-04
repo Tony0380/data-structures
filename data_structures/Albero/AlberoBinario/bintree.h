@@ -27,15 +27,13 @@ public:
 
     virtual nodo figliodestro ( nodo ) const = 0;
 
-    virtual bool sinistrovuoto (const nodo &) const = 0;
+    virtual bool sinistrovuoto ( nodo ) const = 0;
 
-    virtual bool destrovuoto (const nodo &) const = 0;
-
-    virtual bintree costrbinalbero (bintree) const = 0;
+    virtual bool destrovuoto ( nodo ) const = 0;
 
     virtual void cancsottobinalbero (nodo) = 0;
 
-    virtual tipo_elem legginodo (const nodo &) const = 0;
+    virtual tipo_elem legginodo ( nodo ) const = 0;
 
     virtual void scrivinodo (const tipo_elem &,  nodo) = 0;
 
