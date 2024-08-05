@@ -29,23 +29,23 @@ public:
 
     void creabinalbero ();
 
-    bool binalberovuoto() const;
+    bool binalberovuoto () const;
 
     nodo binradice () const;
 
-    nodo binpadre ( nodo ) const;
+    nodo binpadre (nodo) const;
 
-    nodo figliosinistro ( nodo ) const;
+    nodo figliosinistro (nodo) const;
 
-    nodo figliodestro ( nodo ) const;
+    nodo figliodestro (nodo) const;
 
-    bool sinistrovuoto ( nodo ) const;
+    bool sinistrovuoto (nodo) const;
 
-    bool destrovuoto ( nodo ) const;
+    bool destrovuoto (nodo) const;
 
     void cancsottobinalbero (nodo);
 
-    tipo_elem legginodo ( nodo ) const;
+    tipo_elem legginodo (nodo) const;
 
     void scrivinodo (const tipo_elem &, nodo);
 
@@ -55,11 +55,11 @@ public:
 
     void insfigliodestro (nodo, const tipo_elem &);
 
-    void stampavistapreordine() const;
+    void stampavistapreordine () const;
 
-    void stampavistapostordine() const;
+    void stampavistapostordine () const;
 
-    void stampavistasimmetrica() const;
+    void stampavistasimmetrica () const;
     //sovraccarico degli operatori
 
     Linked_bintree<T> &operator= (const Linked_bintree<T> &);
@@ -68,256 +68,256 @@ public:
 
 private:
 
-    void cancellanodo(nodo);
+    void cancellanodo (nodo);
 
     nodo root;
 
-    void stampavistapreordineRic(nodo) const;
+    void stampavistapreordineRic (nodo) const;
 
-    void stampavistapostordineRic(nodo) const;
+    void stampavistapostordineRic (nodo) const;
 
-    void stampavistasimmetricaRic(nodo) const;
+    void stampavistasimmetricaRic (nodo) const;
 
-    bool controllasottoalbero(nodo, const Linked_bintree<T>&) const;
+    bool controllasottoalbero (nodo, const Linked_bintree<T> &) const;
 
-    void copiasottoalbero(nodo, nodo);
+    void copiasottoalbero (nodo, nodo);
 };
 
 template<class T>
-Linked_bintree<T>& Linked_bintree<T>::operator=(const Linked_bintree<T>& bt2) {
+Linked_bintree<T> &Linked_bintree<T>::operator= (const Linked_bintree<T> &bt2) {
     if (this != &bt2) {
         if (root != nullptr) {
-            cancsottobinalbero(root);
+            cancsottobinalbero (root);
             delete root;
             root = nullptr;
         }
 
-        if (!bt2.binalberovuoto()) {
-            insbinradice(bt2.legginodo(bt2.binradice()));
-            copiasottoalbero(root, bt2.binradice());
+        if (!bt2.binalberovuoto ()) {
+            insbinradice (bt2.legginodo (bt2.binradice ()));
+            copiasottoalbero (root, bt2.binradice ());
         }
     }
     return *this;
 }
 
 template<class T>
-void Linked_bintree<T>::copiasottoalbero(nodo n, nodo n2) {
+void Linked_bintree<T>::copiasottoalbero (nodo n, nodo n2) {
     if (n2 != nullptr) {
         // Copia il nodo corrente
-        scrivinodo(legginodo(n2), n);
+        scrivinodo (legginodo (n2), n);
 
         // Copia il sottoalbero sinistro
-        if (!sinistrovuoto(n2)) {
-            insfigliosinistro(n, legginodo(figliosinistro(n2)));
-            copiasottoalbero(figliosinistro(n), figliosinistro(n2));
+        if (!sinistrovuoto (n2)) {
+            insfigliosinistro (n, legginodo (figliosinistro (n2)));
+            copiasottoalbero (figliosinistro (n), figliosinistro (n2));
         }
 
         // Copia il sottoalbero destro
-        if (!destrovuoto(n2)) {
-            insfigliodestro(n, legginodo(figliodestro(n2)));
-            copiasottoalbero(figliodestro(n), figliodestro(n2));
+        if (!destrovuoto (n2)) {
+            insfigliodestro (n, legginodo (figliodestro (n2)));
+            copiasottoalbero (figliodestro (n), figliodestro (n2));
         }
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistasimmetrica() const {
-    if (binalberovuoto()) {
+void Linked_bintree<T>::stampavistasimmetrica () const {
+    if (binalberovuoto ()) {
         cout << "Albero vuoto" << endl;
     } else {
-        stampavistasimmetricaRic(root);
+        stampavistasimmetricaRic (root);
         cout << endl;
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistasimmetricaRic(nodo n) const {
+void Linked_bintree<T>::stampavistasimmetricaRic (nodo n) const {
     if (n != nullptr) {
-        stampavistasimmetricaRic(figliosinistro(n));  // Visita il sottoalbero sinistro
-        cout << legginodo(n) << " ";  // Visita il nodo corrente
-        stampavistasimmetricaRic(figliodestro(n));  // Visita il sottoalbero destro
+        stampavistasimmetricaRic (figliosinistro (n));  // Visita il sottoalbero sinistro
+        cout << legginodo (n) << " ";  // Visita il nodo corrente
+        stampavistasimmetricaRic (figliodestro (n));  // Visita il sottoalbero destro
     }
 }
 
 template<class T>
-Linked_bintree<T>::Linked_bintree(const Linked_bintree &copia) {
-    if(copia.binalberovuoto()) {
-        creabinalbero();
+Linked_bintree<T>::Linked_bintree (const Linked_bintree &copia) {
+    if (copia.binalberovuoto ()) {
+        creabinalbero ();
     } else {
-        root = new Nodo<T>();
-        root->setElem(copia.legginodo(copia.binradice()));
-        nodo n = copia.binradice();
+        root = new Nodo<T> ();
+        root->setElem (copia.legginodo (copia.binradice ()));
+        nodo n = copia.binradice ();
         nodo n1 = root;
-        while(!copia.destrovuoto(n)) {
-            if(!copia.sinistrovuoto(n)) {
-                insfigliosinistro(n1, copia.legginodo(copia.figliosinistro(n)));
-                n1 = figliosinistro(n1);
-                n = copia.figliosinistro(n);
+        while (!copia.destrovuoto (n)) {
+            if (!copia.sinistrovuoto (n)) {
+                insfigliosinistro (n1, copia.legginodo (copia.figliosinistro (n)));
+                n1 = figliosinistro (n1);
+                n = copia.figliosinistro (n);
             }
-            if(!copia.destrovuoto(n)) {
-                insfigliodestro(n1, copia.legginodo(copia.figliodestro(n)));
-                n1 = figliodestro(n1);
-                n = copia.figliodestro(n);
+            if (!copia.destrovuoto (n)) {
+                insfigliodestro (n1, copia.legginodo (copia.figliodestro (n)));
+                n1 = figliodestro (n1);
+                n = copia.figliodestro (n);
             }
         }
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistapostordine() const {
-    if (binalberovuoto()) {
+void Linked_bintree<T>::stampavistapostordine () const {
+    if (binalberovuoto ()) {
         cout << "Albero vuoto" << endl;
     } else {
-        stampavistapostordineRic(root);
+        stampavistapostordineRic (root);
         cout << endl;
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistapostordineRic(nodo n) const {
+void Linked_bintree<T>::stampavistapostordineRic (nodo n) const {
     if (n != nullptr) {
-        stampavistapostordineRic(figliosinistro(n));  // Visita il sottoalbero sinistro
-        stampavistapostordineRic(figliodestro(n));  // Visita il sottoalbero destro
-        cout << legginodo(n) << " ";  // Visita il nodo corrente
+        stampavistapostordineRic (figliosinistro (n));  // Visita il sottoalbero sinistro
+        stampavistapostordineRic (figliodestro (n));  // Visita il sottoalbero destro
+        cout << legginodo (n) << " ";  // Visita il nodo corrente
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistapreordine() const {
-    if (binalberovuoto()) {
+void Linked_bintree<T>::stampavistapreordine () const {
+    if (binalberovuoto ()) {
         cout << "Albero vuoto" << endl;
     } else {
-        stampavistapreordineRic(root);
+        stampavistapreordineRic (root);
         cout << endl;
     }
 }
 
 template<class T>
-void Linked_bintree<T>::stampavistapreordineRic(nodo n) const {
+void Linked_bintree<T>::stampavistapreordineRic (nodo n) const {
     if (n != nullptr) {
-        cout << legginodo(n) << " ";  // Visita il nodo corrente
-        stampavistapreordineRic(figliosinistro(n));  // Visita il sottoalbero sinistro
-        stampavistapreordineRic(figliodestro(n));  // Visita il sottoalbero destro
+        cout << legginodo (n) << " ";  // Visita il nodo corrente
+        stampavistapreordineRic (figliosinistro (n));  // Visita il sottoalbero sinistro
+        stampavistapreordineRic (figliodestro (n));  // Visita il sottoalbero destro
     }
 }
 
 template<class T>
-void Linked_bintree<T>::cancellanodo(Linked_bintree::nodo n) {
-    if(n != nullptr) {
-        cancellanodo(n->getDestro());
-        cancellanodo(n->getSinistro());
+void Linked_bintree<T>::cancellanodo (Linked_bintree::nodo n) {
+    if (n != nullptr) {
+        cancellanodo (n->getDestro ());
+        cancellanodo (n->getSinistro ());
         n = nullptr;
         delete n;
     }
 }
 
 template<class T>
-void Linked_bintree<T>::cancsottobinalbero(Linked_bintree::nodo n) {
-    cancellanodo(n->getSinistro());
-    cancellanodo(n->getDestro());
-    n->setSinistro(nullptr);
-    n->setDestro(nullptr);
+void Linked_bintree<T>::cancsottobinalbero (Linked_bintree::nodo n) {
+    cancellanodo (n->getSinistro ());
+    cancellanodo (n->getDestro ());
+    n->setSinistro (nullptr);
+    n->setDestro (nullptr);
 }
 
 template<class T>
-bool Linked_bintree<T>::binalberovuoto() const {
-    return (root==nullptr);
+bool Linked_bintree<T>::binalberovuoto () const {
+    return (root == nullptr);
 }
 
 template<class T>
-void Linked_bintree<T>::insfigliodestro(Linked_bintree::nodo n, const tipo_elem &e) {
-    if(destrovuoto(n)) {
-        nodo nuovonodo = new Nodo<T>();
-        nuovonodo->setElem(e);
-        nuovonodo->setPadre(n);
-        n->setDestro(nuovonodo);
+void Linked_bintree<T>::insfigliodestro (Linked_bintree::nodo n, const tipo_elem &e) {
+    if (destrovuoto (n)) {
+        nodo nuovonodo = new Nodo<T> ();
+        nuovonodo->setElem (e);
+        nuovonodo->setPadre (n);
+        n->setDestro (nuovonodo);
     } else {
-        throw std::out_of_range("il nodo ha gia un figlio destro");
+        throw std::out_of_range ("il nodo ha gia un figlio destro");
     }
 }
 
 template<class T>
-void Linked_bintree<T>::insfigliosinistro(Linked_bintree::nodo n, const tipo_elem &e) {
-    if(sinistrovuoto(n)) {
-        nodo nuovonodo = new Nodo<T>();
-        nuovonodo->setElem(e);
-        nuovonodo->setPadre(n);
-        n->setSinistro(nuovonodo);
+void Linked_bintree<T>::insfigliosinistro (Linked_bintree::nodo n, const tipo_elem &e) {
+    if (sinistrovuoto (n)) {
+        nodo nuovonodo = new Nodo<T> ();
+        nuovonodo->setElem (e);
+        nuovonodo->setPadre (n);
+        n->setSinistro (nuovonodo);
     } else {
-        throw std::out_of_range("il nodo ha gia un figlio sinistro");
+        throw std::out_of_range ("il nodo ha gia un figlio sinistro");
     }
 }
 
 template<class T>
-void Linked_bintree<T>::insbinradice(const tipo_elem &e) {
-    if(root == nullptr) {
-        root = new Nodo<T>();
-        root->setElem(e);
+void Linked_bintree<T>::insbinradice (const tipo_elem &e) {
+    if (root == nullptr) {
+        root = new Nodo<T> ();
+        root->setElem (e);
     } else {
-        throw std::out_of_range("l'albero ha gia una radice");
+        throw std::out_of_range ("l'albero ha gia una radice");
     }
 }
 
 template<class T>
-void Linked_bintree<T>::scrivinodo(const tipo_elem &e, Linked_bintree::nodo n) {
-    n->setElem(e);
+void Linked_bintree<T>::scrivinodo (const tipo_elem &e, Linked_bintree::nodo n) {
+    n->setElem (e);
 }
 
 template<class T>
-typename Linked_bintree<T>::tipo_elem Linked_bintree<T>::legginodo(Linked_bintree::nodo n) const {
-    return n->getElem();
+typename Linked_bintree<T>::tipo_elem Linked_bintree<T>::legginodo (Linked_bintree::nodo n) const {
+    return n->getElem ();
 }
 
 template<class T>
-bool Linked_bintree<T>::destrovuoto(Linked_bintree::nodo n) const {
-    return (n->getDestro() == nullptr);
+bool Linked_bintree<T>::destrovuoto (Linked_bintree::nodo n) const {
+    return (n->getDestro () == nullptr);
 }
 
 template<class T>
-bool Linked_bintree<T>::sinistrovuoto(Linked_bintree::nodo n) const {
-    return (n->getSinistro() == nullptr);
+bool Linked_bintree<T>::sinistrovuoto (Linked_bintree::nodo n) const {
+    return (n->getSinistro () == nullptr);
 }
 
 template<class T>
-typename Linked_bintree<T>::nodo Linked_bintree<T>::figliodestro(Linked_bintree::nodo  n) const {
-    return n->getDestro();
+typename Linked_bintree<T>::nodo Linked_bintree<T>::figliodestro (Linked_bintree::nodo n) const {
+    return n->getDestro ();
 }
 
 template<class T>
-typename Linked_bintree<T>::nodo Linked_bintree<T>::figliosinistro(Linked_bintree::nodo  n) const {
-    return n->getSinistro();
+typename Linked_bintree<T>::nodo Linked_bintree<T>::figliosinistro (Linked_bintree::nodo n) const {
+    return n->getSinistro ();
 }
 
 template<class T>
-typename Linked_bintree<T>::nodo Linked_bintree<T>::binpadre(Linked_bintree::nodo n) const {
-    return n->getPadre();
+typename Linked_bintree<T>::nodo Linked_bintree<T>::binpadre (Linked_bintree::nodo n) const {
+    return n->getPadre ();
 }
 
 template<class T>
-typename Linked_bintree<T>::nodo Linked_bintree<T>::binradice() const {
-    if(!binalberovuoto()) {
+typename Linked_bintree<T>::nodo Linked_bintree<T>::binradice () const {
+    if (!binalberovuoto ()) {
         return root;
     } else {
-        throw std::out_of_range("albero vuoto, radice non presente");
+        throw std::out_of_range ("albero vuoto, radice non presente");
     }
 }
 
 template<class T>
-void Linked_bintree<T>::creabinalbero() {
+void Linked_bintree<T>::creabinalbero () {
     root = nullptr;
 }
 
 template<class T>
-Linked_bintree<T>::~Linked_bintree() {
-    if(root != nullptr) {
-        cancsottobinalbero(root);
+Linked_bintree<T>::~Linked_bintree () {
+    if (root != nullptr) {
+        cancsottobinalbero (root);
         delete root;
     }
 }
 
 template<class T>
-Linked_bintree<T>::Linked_bintree() {
-    creabinalbero();
+Linked_bintree<T>::Linked_bintree () {
+    creabinalbero ();
 }
 
 #endif //DATA_STRUCTURES_LINKED_BINTREE_H
