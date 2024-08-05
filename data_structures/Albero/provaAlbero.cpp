@@ -5,7 +5,7 @@
 #include "AlberoBinario/Linked_bintree.h"
 
 int main () {
-    Linked_bintree<int> T;
+    Linked_bintree<int> T,T2;
     Nodo<int> *nodo;
     T.insbinradice(1);
     nodo = T.binradice();
@@ -17,4 +17,6 @@ int main () {
     T.stampavistapreordine();
     T.stampavistapostordine();
     T.stampavistasimmetrica();
+    T2 = T;
+    T2.stampavistasimmetrica();
 }

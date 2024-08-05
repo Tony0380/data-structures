@@ -72,12 +72,53 @@ private:
 
     nodo root;
 
-    void stampavistapreordineRic(nodo n) const;
+    void stampavistapreordineRic(nodo) const;
 
-    void stampavistapostordineRic(nodo n) const;
+    void stampavistapostordineRic(nodo) const;
 
-    void stampavistasimmetricaRic(nodo n) const;
+    void stampavistasimmetricaRic(nodo) const;
+
+    bool controllasottoalbero(nodo, const Linked_bintree<T>&) const;
+
+    void copiasottoalbero(nodo, nodo);
 };
+
+template<class T>
+Linked_bintree<T>& Linked_bintree<T>::operator=(const Linked_bintree<T>& bt2) {
+    if (this != &bt2) {
+        if (root != nullptr) {
+            cancsottobinalbero(root);
+            delete root;
+            root = nullptr;
+        }
+
+        if (!bt2.binalberovuoto()) {
+            insbinradice(bt2.legginodo(bt2.binradice()));
+            copiasottoalbero(root, bt2.binradice());
+        }
+    }
+    return *this;
+}
+
+template<class T>
+void Linked_bintree<T>::copiasottoalbero(nodo n, nodo n2) {
+    if (n2 != nullptr) {
+        // Copia il nodo corrente
+        scrivinodo(legginodo(n2), n);
+
+        // Copia il sottoalbero sinistro
+        if (!sinistrovuoto(n2)) {
+            insfigliosinistro(n, legginodo(figliosinistro(n2)));
+            copiasottoalbero(figliosinistro(n), figliosinistro(n2));
+        }
+
+        // Copia il sottoalbero destro
+        if (!destrovuoto(n2)) {
+            insfigliodestro(n, legginodo(figliodestro(n2)));
+            copiasottoalbero(figliodestro(n), figliodestro(n2));
+        }
+    }
+}
 
 template<class T>
 void Linked_bintree<T>::stampavistasimmetrica() const {
