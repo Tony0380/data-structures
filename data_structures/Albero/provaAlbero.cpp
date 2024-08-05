@@ -15,4 +15,6 @@ int main () {
     T.insfigliosinistro(nodo,4);
     T.cancsottobinalbero(nodo);
     T.stampavistapreordine();
+    T.stampavistapostordine();
+    T.stampavistasimmetrica();
 }
