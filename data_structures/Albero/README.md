@@ -123,7 +123,7 @@ ___
   nodo n in N è associato il livello(n);
   * boolean: insieme dei valori di verità
   * nodo: insieme qualsiasi (non infinito)
-*Operatori: 
+* Operatori: 
   * **creaalbero() = T'**
     * POST: T' = (Ø,Ø) = ∧ (ALBERO VUOTO)
   * **alberovuoto(T) = b**
