@@ -3,7 +3,7 @@
 //
 
 #include "AlberoBinario/Linked_bintree.h"
-
+#include "AlberoNario/Linked_tree.h"
 int main () {
     Linked_bintree<int> T,T2;
     Nodo<int> *nodo;
