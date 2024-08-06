@@ -96,3 +96,65 @@ ___
   * **insfigliodestro(u, T) = T'**
     * PRE: T ≠ ∧, u ∈ N, destrovuoto(u,T) = true
     * POST: N' = N ∪ {v}, T' è ottenuto da T aggiungendo v come figlio destro di u
+
+<h2> Albero N-ario </h2>
+
+### Specifica Sintattica
+
+* **Tipi: albero, boolean, nodo**
+
+* **Operatori:**
+  * creaalbero : ( ) → albero
+  * alberovuoto : (albero) → boolean
+  * insradice : (nodo, albero) → albero
+  * radice : (albero) → nodo
+  * padre : (nodo, albero) → nodo
+  * foglia : (nodo, albero) → boolean
+  * primofiglio : (nodo, albero) → nodo
+  * ultimofratello : (nodo, albero) → boolean
+  * succfratello : (nodo, albero) → nodo
+  * insprimosottoalbero : (nodo, albero, albero) → albero
+  * inssottoalbero : (nodo, albero, albero) → albero
+  * cancsottoalbero (nodo, albero) → albero
+  
+### Specifica Semantica
+* Tipi:
+  * albero: insieme degli alberi ordinati T=<N,A> in cui ad ogni
+  nodo n in N è associato il livello(n);
+  * boolean: insieme dei valori di verità
+  * nodo: insieme qualsiasi (non infinito)
+*Operatori: 
+  * **creaalbero() = T'**
+    * POST: T' = (Ø,Ø) = ∧ (ALBERO VUOTO)
+  * **alberovuoto(T) = b**
+    * POST: b = vero se T = ∧; b = falso altrimenti
+  * **insradice(u,T) = T'**
+    * PRE: T = ∧
+    * POST: T' = (N,A), N = {u}, Livello(u) = 0, A = Ø
+  * **radice(T) = u**
+    * PRE: T ≠ ∧, u ∈ N
+    * POST: u : radice di T: livello(u) = 0
+  * **padre(u, T) = v**
+    * PRE: T ≠ ∧, u ∈ N, Livello(u) > 0
+    * POST: v è padre di u, <v, u> ∈ A, Livello(u) = Livello(v) + 1
+  * **foglia(u, T) = b**
+    * PRE: T ≠ ∧, u ∈ N
+    * POST: b = vero se non esiste nodo figlio di b, falso altrimenti
+  * **primofiglio(u, T) = v**
+    * PRE: T ≠ ∧, u ∈ N, Foglia(u, T) = falso
+    * POST: <u, v> ∈ A, Livello(v) = Livello(u) + 1, v è primo secondo la relazione d'ordine stabilita tra i figli di u
+  * **ultimofratello(u, T) = b** 
+    * PRE: T ≠ ∧, u ∈ N
+    * POST: b = vero se non esistono altri fratelli di u che lo seguono nella relazione d'ordine, b = falso altrimenti
+  * **succfratello(u, T) = v**
+    * PRE: T ≠ ∧, u ∈ N, Ultimofratello(u, T) = falso
+    * POST: v è il fratello di u che lo segue nella relazione d'ordine
+  * **insprimosottoalbero(u, T, T') = T''**
+    * PRE: T ≠ ∧, T' ≠ ∧, u ∈ N
+    * POST: T'' è ottenuto da T aggiungendo l'albero T' la cui radice r' è il suo nuovo primofiglio di u
+  * **inssottoalbero(u, T, T') = T''**
+    * PRE: T ≠ ∧, T' ≠ ∧, u ∈ N, u non è radice di T
+    * POST: T'' è l'albero ottenuto da T aggiungendo il sottoalbero T' di radice r'
+  * **cancsottoalbero(u, T) = T'**
+    * PRE: T ≠ ∧, u ∈ N
+    * POST: T' è ottenuto da T togliendovi il sottoalbero di radice u

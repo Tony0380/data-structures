@@ -6,7 +6,7 @@
 #define DATA_STRUCTURES_BINTREE_H
 
 #include <iostream>
-#include "Nodo.h"
+#include "../Nodo.h"
 
 
 template<class T, class N>
