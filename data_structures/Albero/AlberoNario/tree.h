@@ -6,13 +6,14 @@
 #define DATA_STRUCTURES_TREE_H
 
 #include <iostream>
-#include "Nodo.h"
+#include "../AlberoNario/Nodo.h"
 
 template<class T, class N>
 class tree {
 public:
     typedef T tipo_elem;
     typedef N nodo;
+    typedef typename Linked_List<Nodo<T>*>::posizione posizione;
 
     virtual void creaalbero () = 0;
 
@@ -26,11 +27,11 @@ public:
 
     virtual bool foglia (nodo) const = 0;
 
-    virtual nodo primofiglio (nodo) const = 0;
+    virtual posizione primofiglio (nodo) const = 0;
 
-    virtual bool ultimofratello (nodo) const = 0;
+    virtual bool ultimofratello (posizione) const = 0;
 
-    virtual nodo succfratello (nodo) const = 0;
+    virtual posizione succfratello (posizione) const = 0;
 };
 
 #endif //DATA_STRUCTURES_TREE_H

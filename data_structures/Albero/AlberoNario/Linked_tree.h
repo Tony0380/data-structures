@@ -13,7 +13,7 @@ class Linked_tree : public tree<T, Nodo<T> *> {
 public:
     typedef typename tree<T, Nodo<T> *>::tipo_elem tipo_elem;
     typedef typename tree<T, Nodo<T> *>::nodo nodo;
-
+    typedef typename Linked_List<Nodo<T>*>::posizione posizione;
     //costruttore vuoto
     Linked_tree();
 
@@ -37,11 +37,11 @@ public:
 
     bool foglia(nodo) const;
 
-    nodo primofiglio(nodo) const;
+    posizione primofiglio(nodo) const;
 
-    bool ultimofratello(nodo) const;
+    bool ultimofratello(posizione) const;
 
-    nodo succfratello(nodo) const;
+    posizione succfratello(posizione) const;
 
     //sovraccarico degli operatori
 
@@ -57,17 +57,33 @@ private:
 };
 
 template<class T>
-typename Linked_tree<T>::nodo Linked_tree<T>::succfratello(Linked_tree::nodo n) const {
-    return n->succFratello();
+Linked_tree<T>::Linked_tree(const Linked_tree &t) {
+    if(t.root!=nullptr) {
+        root = new Nodo<T>();
+        root->setElem(t.root->getElem());
+        if(!t.root->noFigli()) {
+            posizione p = t.root->primoFiglio();
+            while(!t.root->ultimoFiglio()) {
+                root->aggiungiFiglio(p->getElem());
+                p = p->succFratello();
+            }
+            root->aggiungiFiglio(p->getElem());
+        }
+    }
 }
 
 template<class T>
-bool Linked_tree<T>::ultimofratello(Linked_tree::nodo n) const {
-    return n->ultimoFiglio();
+bool Linked_tree<T>::ultimofratello(Linked_List<Nodo<T>>::posizione p) const {
+    return p->getElem().ultimoFiglio();
 }
 
 template<class T>
-typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
+typename Linked_List<Nodo<T>>::posizione Linked_tree<T>::succfratello(Linked_List<Nodo<T>>::posizione p) const {
+    return p->succFratello();
+}
+
+template<class T>
+typename Linked_List<Nodo<T>>::posizione Linked_tree<T>::primofiglio(nodo n) const {
     return n->primoFiglio();
 }
 

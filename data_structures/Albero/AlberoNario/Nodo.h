@@ -29,7 +29,7 @@ public:
 
     bool noFigli () const;
 
-    Nodo *primoFiglio () const;
+    posizione primoFiglio () const;
 
     Nodo *succFratello () const;
 
@@ -40,22 +40,22 @@ private:
 
     tipo_elem Elemento;
 
-    Linked_List<Nodo<T>> Figli;
+    Linked_List<Nodo<T>*> Figli;
 };
 
 template<typename T>
 Nodo<T> *Nodo<T>::succFratello () const {
-    return this->getPadre ().Figli.succlista (this);
+    return Figli.succlista (this);
 }
 
 template<typename T>
 bool Nodo<T>::ultimoFiglio () const {
-    return this->getPadre ()->Figli.finelista (this);
+    return Figli.finelista (this);
 }
 
 template<typename T>
-Nodo<T> *Nodo<T>::primoFiglio () const {
-    return Figli.primolista ();
+typename Linked_List<Nodo<T>>::posizione Nodo<T>::primoFiglio () const {
+    return Figli.primolista();
 }
 
 template<typename T>
@@ -99,7 +99,7 @@ typename Nodo<T>::tipo_elem Nodo<T>::getElem () const {
 
 template<typename T>
 Nodo<T>::Nodo () {
-    Figli = new Linked_List<Nodo<T>>;
+    Figli.crealista();
     padre = nullptr;
 }
 
