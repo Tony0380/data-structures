@@ -6,12 +6,13 @@
 #define DATA_STRUCTURES_LINKED_TREE_H
 
 #include "tree.h"
+#include <stdexcept>
 
 template<class T>
 class Linked_tree : public tree<T, Nodo<T> *> {
 public:
-    typedef typename bintree<T, Nodo<T> *>::tipo_elem tipo_elem;
-    typedef typename bintree<T, Nodo<T> *>::nodo nodo;
+    typedef typename tree<T, Nodo<T> *>::tipo_elem tipo_elem;
+    typedef typename tree<T, Nodo<T> *>::nodo nodo;
 
     //costruttore vuoto
     Linked_tree();
@@ -49,8 +50,62 @@ public:
     bool operator== (const Linked_tree<T> &);
 
 private:
+
+    void cancellanodo(nodo);
+
     nodo root;
 };
+
+template<class T>
+typename Linked_tree<T>::nodo Linked_tree<T>::succfratello(Linked_tree::nodo n) const {
+    return n->succFratello();
+}
+
+template<class T>
+bool Linked_tree<T>::ultimofratello(Linked_tree::nodo n) const {
+    return n->ultimoFiglio();
+}
+
+template<class T>
+typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
+    return n->primoFiglio();
+}
+
+template<class T>
+bool Linked_tree<T>::foglia(Linked_tree::nodo n) const {
+    return n->noFigli();
+}
+
+template<class T>
+typename Linked_tree<T>::nodo Linked_tree<T>::padre(Linked_tree::nodo n) const {
+    return n->getPadre();
+}
+
+template<class T>
+typename Linked_tree<T>::nodo Linked_tree<T>::radice() const {
+    return root;
+}
+
+template<class T>
+void Linked_tree<T>::insradice(Linked_tree::nodo n) {
+    if(root == nullptr) {
+        root = n;
+    } else {
+        throw std::out_of_range("l'albero ha gia una radice");
+    }
+}
+
+template<class T>
+bool Linked_tree<T>::alberovuoto() const {
+    return (root==nullptr);
+}
+
+template<class T>
+Linked_tree<T>::~Linked_tree() {
+    if(root!=nullptr) {
+        cancellanodo(root);
+    }
+}
 
 template<class T>
 Linked_tree<T>::Linked_tree() {
@@ -59,7 +114,7 @@ Linked_tree<T>::Linked_tree() {
 
 template<class T>
 void Linked_tree<T>::creaalbero() {
-    root = new nodo();
+    root = new Nodo<T>();
 }
 
 #endif //DATA_STRUCTURES_LINKED_TREE_H

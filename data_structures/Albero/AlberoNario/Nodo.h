@@ -17,16 +17,23 @@ public:
 
     Nodo *getPadre () const;
 
-    void setPadre(Nodo *);
+    void setPadre (Nodo *);
 
     tipo_elem getElem () const;
 
     void setElem (const tipo_elem &);
 
-    void aggiungiFiglio(Nodo<T>);
+    void aggiungiFiglio (Nodo);
 
-    void rimuoviFiglio(posizione);
+    void rimuoviFiglio (posizione);
 
+    bool noFigli () const;
+
+    Nodo *primoFiglio () const;
+
+    Nodo *succFratello () const;
+
+    bool ultimoFiglio () const;
 
 private:
     Nodo *padre;
@@ -37,23 +44,46 @@ private:
 };
 
 template<typename T>
-void Nodo<T>::rimuoviFiglio(Nodo::posizione p) {
-    Figli.canclista(p);
+Nodo<T> *Nodo<T>::succFratello () const {
+    return this->getPadre ().Figli.succlista (this);
 }
 
 template<typename T>
-void Nodo<T>::aggiungiFiglio(Nodo<T> n) {
-    posizione p = Figli.primolista();
-    Figli.inslista(n, p);
+bool Nodo<T>::ultimoFiglio () const {
+    return this->getPadre ()->Figli.finelista (this);
 }
 
 template<typename T>
-void Nodo<T>::setPadre(Nodo* newPadre) {
+Nodo<T> *Nodo<T>::primoFiglio () const {
+    return Figli.primolista ();
+}
+
+template<typename T>
+bool Nodo<T>::noFigli () const {
+    return Figli.listavuota ();
+}
+
+template<typename T>
+void Nodo<T>::rimuoviFiglio (Nodo::posizione p) {
+    Figli.canclista (p);
+}
+
+template<typename T>
+void Nodo<T>::aggiungiFiglio (Nodo<T> n) {
+    posizione p = Figli.primolista ();
+    while(!Figli.finelista(p)) {
+        p = Figli.succlista(p);
+    }
+    Figli.inslista (n, p);
+}
+
+template<typename T>
+void Nodo<T>::setPadre (Nodo *newPadre) {
     padre = newPadre;
 }
 
 template<typename T>
-Nodo<T> *Nodo<T>::getPadre() const {
+Nodo<T> *Nodo<T>::getPadre () const {
     return padre;
 }
 
