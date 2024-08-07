@@ -52,4 +52,14 @@ private:
     nodo root;
 };
 
+template<class T>
+Linked_tree<T>::Linked_tree() {
+    creaalbero();
+}
+
+template<class T>
+void Linked_tree<T>::creaalbero() {
+    root = new nodo();
+}
+
 #endif //DATA_STRUCTURES_LINKED_TREE_H
