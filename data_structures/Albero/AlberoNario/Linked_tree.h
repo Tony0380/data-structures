@@ -41,6 +41,15 @@ public:
     bool ultimofratello(nodo) const;
 
     nodo succfratello(nodo) const;
+
+    //sovraccarico degli operatori
+
+    Linked_bintree<T> &operator= (const Linked_tree<T> &);
+
+    bool operator== (const Linked_tree<T> &);
+
+private:
+    nodo root;
 };
 
 #endif //DATA_STRUCTURES_LINKED_TREE_H
