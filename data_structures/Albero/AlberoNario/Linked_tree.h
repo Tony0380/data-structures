@@ -44,9 +44,42 @@ public:
     posizione succfratello(posizione) const;
 
     //sovraccarico degli operatori
+
+    Linked_tree &operator=(const Linked_tree &);
+
+    bool operator==(const Linked_tree &) const;
 private:
     nodo Radice;
 };
+
+template<class T>
+typename Linked_tree<T>::posizione Linked_tree<T>::succfratello(Linked_tree::posizione p) const {
+    return p->getElem()->getPadre()->succFratello(p);
+}
+
+template<class T>
+bool Linked_tree<T>::ultimofratello(Linked_tree::posizione p) const {
+    return p->getElem()->getPadre()->ultimoFiglio() == p;
+}
+
+template<class T>
+typename Linked_tree<T>::posizione Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
+    return n->primoFiglio();
+}
+
+template<class T>
+bool Linked_tree<T>::foglia(Linked_tree::nodo n) const {
+    return n->noFigli();
+}
+
+template<class T>
+typename Linked_tree<T>::nodo Linked_tree<T>::padre(Linked_tree::nodo n) const {
+    if(n!=radice()) {
+        return n->getPadre();
+    } else {
+        throw std::runtime_error("Il nodo è la radice");
+    }
+}
 
 template<class T>
 typename Linked_tree<T>::nodo Linked_tree<T>::radice() const {
