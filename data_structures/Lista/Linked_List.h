@@ -83,6 +83,9 @@ public:
     //operatori ausiliari
     void stampalista () const;
 
+    posizione ultimolista () const {
+        return testa->getPred ();
+    }
     // sovraccarico operatori
 
     Linked_List<T> &operator= (const Linked_List<T> &);

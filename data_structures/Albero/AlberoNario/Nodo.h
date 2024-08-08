@@ -29,12 +29,13 @@ public:
 
     bool noFigli () const;
 
+    posizione ultimoFiglio () const;
+
     posizione primoFiglio () const;
 
-    Nodo *succFratello () const;
+    posizione succFratello (posizione) const;
 
-    bool ultimoFiglio () const;
-
+    bool ultimoFratello (posizione) const;
 private:
     Nodo *padre;
 
@@ -44,42 +45,14 @@ private:
 };
 
 template<typename T>
-Nodo<T> *Nodo<T>::succFratello () const {
-    return Figli.succlista (this);
+typename Nodo<T>::posizione Nodo<T>::ultimoFiglio () const {
+    return Figli.ultimolista();
 }
 
 template<typename T>
-bool Nodo<T>::ultimoFiglio () const {
-    return Figli.finelista (this);
-}
-
-template<typename T>
-typename Linked_List<Nodo<T>>::posizione Nodo<T>::primoFiglio () const {
-    return Figli.primolista();
-}
-
-template<typename T>
-bool Nodo<T>::noFigli () const {
-    return Figli.listavuota ();
-}
-
-template<typename T>
-void Nodo<T>::rimuoviFiglio (Nodo::posizione p) {
-    Figli.canclista (p);
-}
-
-template<typename T>
-void Nodo<T>::aggiungiFiglio (Nodo<T> n) {
-    posizione p = Figli.primolista ();
-    while(!Figli.finelista(p)) {
-        p = Figli.succlista(p);
-    }
-    Figli.inslista (n, p);
-}
-
-template<typename T>
-void Nodo<T>::setPadre (Nodo *newPadre) {
-    padre = newPadre;
+Nodo<T>::Nodo () {
+    padre = nullptr;
+    Figli = Linked_List<Nodo<T>*>();
 }
 
 template<typename T>
@@ -88,8 +61,8 @@ Nodo<T> *Nodo<T>::getPadre () const {
 }
 
 template<typename T>
-void Nodo<T>::setElem (const tipo_elem &newElem) {
-    Elemento = newElem;
+void Nodo<T>::setPadre (Nodo *p) {
+    padre = p;
 }
 
 template<typename T>
@@ -98,9 +71,40 @@ typename Nodo<T>::tipo_elem Nodo<T>::getElem () const {
 }
 
 template<typename T>
-Nodo<T>::Nodo () {
-    Figli.crealista();
-    padre = nullptr;
+void Nodo<T>::setElem (const tipo_elem &e) {
+    Elemento = e;
 }
+
+template<typename T>
+void Nodo<T>::aggiungiFiglio (Nodo figlio) {
+    Figli.inslista(figlio, Figli.ultimolista());
+}
+
+template<typename T>
+void Nodo<T>::rimuoviFiglio (posizione p) {
+    Figli.canclista(p);
+}
+
+template<typename T>
+bool Nodo<T>::noFigli () const {
+    return Figli.listavuota();
+}
+
+template<typename T>
+typename Nodo<T>::posizione Nodo<T>::primoFiglio () const {
+    return Figli.primolista();
+}
+
+template<typename T>
+typename Nodo<T>::posizione Nodo<T>::succFratello (posizione p) const {
+    return Figli.succlista(p);
+}
+
+template<typename T>
+bool Nodo<T>::ultimoFratello (posizione p) const {
+    return Figli.finelista(p);
+}
+
+
 
 #endif //DATA_STRUCTURES_NODO_H
