@@ -54,7 +54,11 @@ private:
 
 template<class T>
 typename Linked_tree<T>::posizione Linked_tree<T>::succfratello(Linked_tree::posizione p) const {
-    return p->getElem()->getPadre()->succFratello(p);
+    if (!ultimofratello(p)) {
+        return p->getElem()->getPadre()->succFratello(p);
+    } else {
+        throw std::runtime_error("Il nodo è l'ultimo fratello");
+    }
 }
 
 template<class T>

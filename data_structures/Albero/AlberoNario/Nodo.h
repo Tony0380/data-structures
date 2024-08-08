@@ -11,7 +11,7 @@ template<typename T>
 class Nodo {
 public:
     typedef T tipo_elem;
-    typedef typename Linked_List<Nodo<T>>::posizione posizione;
+    typedef typename Linked_List<Nodo<T>*>::posizione posizione;
 
     Nodo ();
 
