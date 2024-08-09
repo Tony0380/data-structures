@@ -19,4 +19,5 @@ int main () {
     s->setElem(7);
     n->aggiungiFiglio(s);
     n->stampaFigli();
+    cout << "Il padre del nodo è: " << T.padre(p)->getElem() << endl;
 }

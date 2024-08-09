@@ -98,6 +98,7 @@ template<class T>
 void Linked_tree<T>::insradice(Linked_tree::nodo n) {
     if(alberovuoto()) {
         Radice = n;
+        n->setPadre(nullptr);
     } else {
         throw std::runtime_error("L'albero ha già una radice");
     }
