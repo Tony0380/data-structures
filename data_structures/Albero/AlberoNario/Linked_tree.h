@@ -54,7 +54,7 @@ public:
 
     void stampapostordine () const;
 
-    void stampainvista (int i) const;
+    void stampainvista (const int &) const;
 
     //sovraccarico degli operatori
 
@@ -73,7 +73,7 @@ private:
 };
 
 template<class T>
-void Linked_tree<T>::stampainvista (int i) const {
+void Linked_tree<T>::stampainvista (const int &i) const {
     if (!alberovuoto ()) {
         stampainvistaRic (radice (), i);
     }
