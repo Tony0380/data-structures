@@ -54,7 +54,7 @@ public:
 
     void stampapostordine () const;
 
-    void stampainvista(int i) const;
+    void stampainvista (int i) const;
 
     //sovraccarico degli operatori
 
@@ -63,7 +63,7 @@ public:
     //bool operator== (const Linked_tree &) const;
 
 private:
-    void stampainvistaRic(nodo, const int &) const;
+    void stampainvistaRic (nodo, const int &) const;
 
     void stampapostordineRic (nodo) const;
 
@@ -73,32 +73,32 @@ private:
 };
 
 template<class T>
-void Linked_tree<T>::stampainvista(int i) const {
-    if (!alberovuoto()) {
-        stampainvistaRic(radice(), i);
+void Linked_tree<T>::stampainvista (int i) const {
+    if (!alberovuoto ()) {
+        stampainvistaRic (radice (), i);
     }
 }
 
 template<class T>
-void Linked_tree<T>::stampainvistaRic(nodo n, const int &i) const {
+void Linked_tree<T>::stampainvistaRic (nodo n, const int &i) const {
     if (i == 0) {
-        stampapreordineRic(n);
+        stampapreordineRic (n);
     } else {
-        if(!foglia(n)) {
-            posizione p = n->primoFiglio();
+        if (!foglia (n)) {
+            posizione p = n->primoFiglio ();
             int j = 0;
-            while ((!n->ultimoFratello(p) || p == n->primoFiglio()) && j < i) {
-                stampainvistaRic(p->getElem(), i);
-                p = p->getNext();
+            while ((!n->ultimoFratello (p) || p == n->primoFiglio ()) && j < i) {
+                stampainvistaRic (p->getElem (), i);
+                p = p->getNext ();
                 j++;
             }
-            cout << n->getElem() << " ";
-            while (!n->ultimoFratello(p) || p == n->primoFiglio()) {
-                stampainvistaRic(p->getElem(), i);
-                p = p->getNext();
+            cout << n->getElem () << " ";
+            while (!n->ultimoFratello (p) || p == n->primoFiglio ()) {
+                stampainvistaRic (p->getElem (), i);
+                p = p->getNext ();
             }
         } else {
-            cout << n->getElem() << " ";
+            cout << n->getElem () << " ";
         }
     }
 }
