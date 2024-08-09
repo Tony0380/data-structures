@@ -22,7 +22,7 @@ public:
     //Linked_tree(const Linked_tree &);
 
     //distruttore
-    //~Linked_tree();
+    ~Linked_tree();
 
     //ridefinizione dei metodi virtuali puri della classe tree
 
@@ -55,6 +55,13 @@ private:
 };
 
 template<class T>
+Linked_tree<T>::~Linked_tree() {
+    if (!alberovuoto()) {
+        delete Radice;
+    }
+}
+
+template<class T>
 typename Linked_tree<T>::nodo Linked_tree<T>::succfratello (Linked_tree::nodo p) const {
     if (!ultimofratello (p)) {
         posizione tmp = p->getPadre ()->primoFiglio ();
@@ -73,8 +80,11 @@ bool Linked_tree<T>::ultimofratello (Linked_tree::nodo p) const {
 }
 
 template<class T>
-typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio (Linked_tree::nodo n) const {
-    return n->primoFiglio ()->getElem ();
+typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
+    if (foglia(n)) {
+        throw std::runtime_error("Il nodo non ha figli");
+    }
+    return n->primoFiglio()->getElem();
 }
 
 template<class T>
@@ -124,6 +134,7 @@ template<class T>
 void Linked_tree<T>::creaalbero () {
     Radice = nullptr;
 }
+
 
 
 #endif //DATA_STRUCTURES_LINKED_TREE_H

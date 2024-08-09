@@ -31,5 +31,4 @@ int main () {
     p->stampaFigli();
     cout <<endl;
     cout <<"ciao";
-    cout << T.primofiglio(p)->getElem();
 }

@@ -13,7 +13,11 @@ public:
     typedef T tipo_elem;
     typedef typename Linked_List<Nodo<T> *>::posizione posizione;
 
+    //costruttore
     Nodo ();
+
+    //distruttore
+    ~Nodo ();
 
     Nodo *getPadre () const;
 
@@ -130,5 +134,13 @@ void Nodo<T>::stampaFigli () const {
     }
 }
 
-
+template<typename T>
+Nodo<T>::~Nodo() {
+    while (!noFigli()) {
+        posizione p = primoFiglio();
+        Nodo<T>* figlio = p->getElem();
+        rimuoviFiglio(p);
+        delete figlio;
+    }
+}
 #endif //DATA_STRUCTURES_NODO_H
