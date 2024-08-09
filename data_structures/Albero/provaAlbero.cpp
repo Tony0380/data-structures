@@ -23,7 +23,7 @@ int main () {
     a->setElem(8);
     n->aggiungiFiglio(a);
     d->setElem(9);
-    n->aggiungiFiglio(d);
+    T.insfiglio(n,d);
     n->stampaFigli();
     Nodo<int>* o = new Nodo<int>();
     o->setElem(10);

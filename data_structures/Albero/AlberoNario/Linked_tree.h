@@ -152,7 +152,7 @@ void Linked_tree<T>::insfiglio (Linked_tree::nodo n, Linked_tree::nodo f) {
 
 template<class T>
 void Linked_tree<T>::cancfiglio (Linked_tree::nodo n, Linked_tree::nodo f) {
-    if (n != nullptr) {
+    if (n != nullptr && f != nullptr && !foglia (n)) {
         posizione p = n->primoFiglio ();
         while (p->getElem () != f) {
             p = p->getNext ();

@@ -104,6 +104,7 @@ void Nodo<T>::aggiungiFiglio (Nodo *figlio) {
 template<typename T>
 void Nodo<T>::rimuoviFiglio (posizione p) {
     Figli.canclista (p);
+    p->getElem()->padre = nullptr;
 }
 
 template<typename T>
