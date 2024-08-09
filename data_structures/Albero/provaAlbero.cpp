@@ -25,4 +25,11 @@ int main () {
     d->setElem(9);
     n->aggiungiFiglio(d);
     n->stampaFigli();
+    Nodo<int>* o = new Nodo<int>();
+    o->setElem(10);
+    p->aggiungiFiglio(o);
+    p->stampaFigli();
+    cout <<endl;
+    cout <<"ciao";
+    cout << T.primofiglio(p)->getElem();
 }

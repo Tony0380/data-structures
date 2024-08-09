@@ -11,7 +11,7 @@ template<typename T>
 class Nodo {
 public:
     typedef T tipo_elem;
-    typedef typename Linked_List<Nodo<T>*>::posizione posizione;
+    typedef typename Linked_List<Nodo<T> *>::posizione posizione;
 
     Nodo ();
 
@@ -37,24 +37,37 @@ public:
 
     bool ultimoFratello (posizione) const;
 
-    void stampaFigli() const;
+    void stampaFigli () const;
+
+    //sovraccarico operatori
+
+    Nodo &operator= (const Nodo &);
+
 private:
     Nodo *padre;
 
     tipo_elem Elemento;
 
-    Linked_List<Nodo<T>*> Figli;
+    Linked_List<Nodo<T> *> Figli;
 };
 
 template<typename T>
+Nodo<T> &Nodo<T>::operator= (const Nodo &n) {
+    padre = n.padre;
+    Elemento = n.Elemento;
+    Figli = n.Figli;
+    return *this;
+}
+
+template<typename T>
 typename Nodo<T>::posizione Nodo<T>::ultimoFiglio () const {
-    return Figli.ultimolista()->getPred();
+    return Figli.ultimolista ()->getPred ();
 }
 
 template<typename T>
 Nodo<T>::Nodo () {
     padre = nullptr;
-    Figli = Linked_List<Nodo<T>*>();
+    Figli = Linked_List<Nodo<T> *> ();
 }
 
 template<typename T>
@@ -79,44 +92,43 @@ void Nodo<T>::setElem (const tipo_elem &e) {
 
 template<typename T>
 void Nodo<T>::aggiungiFiglio (Nodo *figlio) {
-    posizione p = Figli.ultimolista();
-    Figli.inslista(figlio, p);
+    posizione p = Figli.ultimolista ();
+    Figli.inslista (figlio, p);
     figlio->padre = this;
 }
 
 template<typename T>
 void Nodo<T>::rimuoviFiglio (posizione p) {
-    Figli.canclista(p);
+    Figli.canclista (p);
 }
 
 template<typename T>
 bool Nodo<T>::noFigli () const {
-    return Figli.listavuota();
+    return Figli.listavuota ();
 }
 
 template<typename T>
 typename Nodo<T>::posizione Nodo<T>::primoFiglio () const {
-    return Figli.primolista();
+    return Figli.primolista ();
 }
 
 template<typename T>
 typename Nodo<T>::posizione Nodo<T>::succFratello (posizione p) const {
-    return Figli.succlista(p);
+    return Figli.succlista (p);
 }
 
 template<typename T>
 bool Nodo<T>::ultimoFratello (posizione p) const {
-    return Figli.finelista(p);
+    return Figli.finelista (p);
 }
 
 template<typename T>
-void Nodo<T>::stampaFigli() const {
+void Nodo<T>::stampaFigli () const {
     cout << "Figli di " << Elemento << ": ";
-    for (posizione p = Figli.primolista(); !Figli.finelista(p); p = Figli.succlista(p)) {
-        cout << p->getElem()->getElem() << " ";
+    for (posizione p = Figli.primolista (); !Figli.finelista (p); p = Figli.succlista (p)) {
+        cout << p->getElem ()->getElem () << " ";
     }
 }
-
 
 
 #endif //DATA_STRUCTURES_NODO_H
