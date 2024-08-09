@@ -12,7 +12,7 @@ using namespace std;
 int main() {
     Linked_List<int> l,l2;
     l.crealista();
-    Nodo_Lista<int>* p = l.primolista();
+    Nodo_Lista<int>* p = l.ultimolista();
     l.inslista(1, p);
     l.inslista(2, p);
     l.inslista(3, p);

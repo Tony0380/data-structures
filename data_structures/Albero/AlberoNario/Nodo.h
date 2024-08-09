@@ -77,7 +77,8 @@ void Nodo<T>::setElem (const tipo_elem &e) {
 
 template<typename T>
 void Nodo<T>::aggiungiFiglio (Nodo *figlio) {
-    Figli.inslista(figlio, Figli.ultimolista());
+    posizione p = Figli.ultimolista();
+    Figli.inslista(figlio, p);
 }
 
 template<typename T>
