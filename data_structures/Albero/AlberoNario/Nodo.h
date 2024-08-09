@@ -17,7 +17,7 @@ public:
     Nodo ();
 
     //distruttore
-    ~Nodo ();
+    ~Nodo();
 
     Nodo *getPadre () const;
 
@@ -43,6 +43,8 @@ public:
 
     void stampaFigli () const;
 
+    void cancellaFigli();
+
     //sovraccarico operatori
 
     Nodo &operator= (const Nodo &);
@@ -54,6 +56,13 @@ private:
 
     Linked_List<Nodo<T> *> Figli;
 };
+
+template<typename T>
+Nodo<T>::~Nodo() {
+    if (!noFigli()) {
+        cancellaFigli();
+    }
+}
 
 template<typename T>
 Nodo<T> &Nodo<T>::operator= (const Nodo &n) {
@@ -136,12 +145,15 @@ void Nodo<T>::stampaFigli () const {
 }
 
 template<typename T>
-Nodo<T>::~Nodo() {
-    while (!noFigli()) {
-        posizione p = primoFiglio();
-        Nodo<T>* figlio = p->getElem();
-        rimuoviFiglio(p);
-        delete figlio;
+void Nodo<T>::cancellaFigli() {
+    posizione p = Figli.primolista();
+    while (!Figli.finelista(p)) {
+        posizione q = p;
+        p = Figli.succlista(p);
+        delete q->getElem();
+        delete q;
     }
 }
+
+
 #endif //DATA_STRUCTURES_NODO_H

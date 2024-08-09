@@ -50,6 +50,8 @@ public:
 
     void cancfiglio (nodo, nodo);
 
+    void stampapreordine() const;
+
     //sovraccarico degli operatori
 
     Linked_tree &operator= (const Linked_tree &);
@@ -57,13 +59,35 @@ public:
     bool operator== (const Linked_tree &) const;
 
 private:
+    void stampapreordineRic(nodo) const;
+
     nodo Radice;
 };
+
+template<class T>
+void Linked_tree<T>::stampapreordine() const {
+    if (!alberovuoto()) {
+        stampapreordineRic(radice());
+    }
+}
+
+template<class T>
+void Linked_tree<T>::stampapreordineRic(nodo n) const {
+    cout << n->getElem() << " ";
+    if (!foglia(n)) {
+        posizione p = n->primoFiglio();
+        while(!n->ultimoFratello(p) || p == n->primoFiglio()) {
+            stampapreordineRic(p->getElem());
+            p = p->getNext();
+        }
+    }
+}
 
 template<class T>
 Linked_tree<T>::~Linked_tree() {
     if (!alberovuoto()) {
         delete Radice;
+        Radice = nullptr;
     }
 }
 

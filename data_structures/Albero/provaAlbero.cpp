@@ -17,18 +17,16 @@ int main () {
     Nodo<int>* a = new Nodo<int>();
     Nodo<int>* d = new Nodo<int>();
     p->setElem(6);
-    n->aggiungiFiglio(p);
+    T.insfiglio(n,p);
     s->setElem(7);
-    n->aggiungiFiglio(s);
+    T.insfiglio(n,s);
     a->setElem(8);
-    n->aggiungiFiglio(a);
+    T.insfiglio(n,a);
     d->setElem(9);
     T.insfiglio(n,d);
-    n->stampaFigli();
     Nodo<int>* o = new Nodo<int>();
     o->setElem(10);
-    p->aggiungiFiglio(o);
-    p->stampaFigli();
-    cout <<endl;
+    T.insfiglio(p,o);
+    T.stampapreordine();
     cout <<"ciao";
 }
