@@ -37,11 +37,11 @@ public:
 
     bool foglia(nodo) const;
 
-    posizione primofiglio(nodo) const;
+    nodo primofiglio(nodo) const;
 
-    bool ultimofratello(posizione) const;
+    bool ultimofratello(nodo) const;
 
-    posizione succfratello(posizione) const;
+    nodo succfratello(nodo) const;
 
     //sovraccarico degli operatori
 
@@ -53,22 +53,26 @@ private:
 };
 
 template<class T>
-typename Linked_tree<T>::posizione Linked_tree<T>::succfratello(Linked_tree::posizione p) const {
+typename Linked_tree<T>::nodo Linked_tree<T>::succfratello(Linked_tree::nodo p) const {
     if (!ultimofratello(p)) {
-        return p->getElem()->getPadre()->succFratello(p);
+        posizione tmp = p->getPadre()->primoFiglio();
+        while (tmp->getElem() != p) {
+            tmp = tmp->getNext();
+        }
+        return p->getPadre()->succFratello(tmp)->getElem();
     } else {
         throw std::runtime_error("Il nodo è l'ultimo fratello");
     }
 }
 
 template<class T>
-bool Linked_tree<T>::ultimofratello(Linked_tree::posizione p) const {
-    return p->getElem()->getPadre()->ultimoFiglio() == p;
+bool Linked_tree<T>::ultimofratello(Linked_tree::nodo p) const {
+    return p->getPadre()->ultimoFiglio()->getElem() == p;
 }
 
 template<class T>
-typename Linked_tree<T>::posizione Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
-    return n->primoFiglio();
+typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
+    return n->primoFiglio()->getElem();
 }
 
 template<class T>

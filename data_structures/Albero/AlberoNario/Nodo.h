@@ -48,7 +48,7 @@ private:
 
 template<typename T>
 typename Nodo<T>::posizione Nodo<T>::ultimoFiglio () const {
-    return Figli.ultimolista();
+    return Figli.ultimolista()->getPred();
 }
 
 template<typename T>

@@ -27,11 +27,11 @@ public:
 
     virtual bool foglia (nodo) const = 0;
 
-    virtual posizione primofiglio (nodo) const = 0;
+    virtual nodo primofiglio (nodo) const = 0;
 
-    virtual bool ultimofratello (posizione) const = 0;
+    virtual bool ultimofratello (nodo) const = 0;
 
-    virtual posizione succfratello (posizione) const = 0;
+    virtual nodo succfratello (nodo) const = 0;
 };
 
 #endif //DATA_STRUCTURES_TREE_H
