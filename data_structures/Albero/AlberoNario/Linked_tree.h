@@ -52,17 +52,75 @@ public:
 
     void stampapreordine () const;
 
+    void stampapostordine () const;
+
+    void stampainvista(int i) const;
+
     //sovraccarico degli operatori
 
-    Linked_tree &operator= (const Linked_tree &);
+    //Linked_tree &operator= (const Linked_tree &);
 
-    bool operator== (const Linked_tree &) const;
+    //bool operator== (const Linked_tree &) const;
 
 private:
+    void stampainvistaRic(nodo, const int &) const;
+
+    void stampapostordineRic (nodo) const;
+
     void stampapreordineRic (nodo) const;
 
     nodo Radice;
 };
+
+template<class T>
+void Linked_tree<T>::stampainvista(int i) const {
+    if (!alberovuoto()) {
+        stampainvistaRic(radice(), i);
+    }
+}
+
+template<class T>
+void Linked_tree<T>::stampainvistaRic(nodo n, const int &i) const {
+    if (i == 0) {
+        stampapreordineRic(n);
+    } else {
+        if(!foglia(n)) {
+            posizione p = n->primoFiglio();
+            int j = 0;
+            while ((!n->ultimoFratello(p) || p == n->primoFiglio()) && j < i) {
+                stampainvistaRic(p->getElem(), i);
+                p = p->getNext();
+                j++;
+            }
+            cout << n->getElem() << " ";
+            while (!n->ultimoFratello(p) || p == n->primoFiglio()) {
+                stampainvistaRic(p->getElem(), i);
+                p = p->getNext();
+            }
+        } else {
+            cout << n->getElem() << " ";
+        }
+    }
+}
+
+template<class T>
+void Linked_tree<T>::stampapostordine () const {
+    if (!alberovuoto ()) {
+        stampapostordineRic (radice ());
+    }
+}
+
+template<class T>
+void Linked_tree<T>::stampapostordineRic (nodo n) const {
+    if (!foglia (n)) {
+        posizione p = n->primoFiglio ();
+        while (!n->ultimoFratello (p) || p == n->primoFiglio ()) {
+            stampapostordineRic (p->getElem ());
+            p = p->getNext ();
+        }
+    }
+    cout << n->getElem () << " ";
+}
 
 template<class T>
 void Linked_tree<T>::stampapreordine () const {

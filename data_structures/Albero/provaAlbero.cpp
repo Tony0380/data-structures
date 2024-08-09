@@ -28,5 +28,6 @@ int main () {
     o->setElem(10);
     T.insfiglio(p,o);
     T.stampapreordine();
+    T.stampapostordine();
     cout <<"ciao";
 }
