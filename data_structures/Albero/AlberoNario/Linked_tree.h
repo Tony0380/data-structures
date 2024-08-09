@@ -44,6 +44,12 @@ public:
 
     nodo succfratello (nodo) const;
 
+    //metodi aggiuntivi
+
+    void insfiglio (nodo, nodo);
+
+    void cancfiglio (nodo, nodo);
+
     //sovraccarico degli operatori
 
     Linked_tree &operator= (const Linked_tree &);
@@ -135,6 +141,27 @@ void Linked_tree<T>::creaalbero () {
     Radice = nullptr;
 }
 
+template<class T>
+void Linked_tree<T>::insfiglio (Linked_tree::nodo n, Linked_tree::nodo f) {
+    if (n != nullptr) {
+        n->aggiungiFiglio (f);
+    } else {
+        throw std::runtime_error ("Il nodo padre non esiste");
+    }
+}
+
+template<class T>
+void Linked_tree<T>::cancfiglio (Linked_tree::nodo n, Linked_tree::nodo f) {
+    if (n != nullptr) {
+        posizione p = n->primoFiglio ();
+        while (p->getElem () != f) {
+            p = p->getNext ();
+        }
+        n->rimuoviFiglio (p);
+    } else {
+        throw std::runtime_error ("Il nodo padre non esiste");
+    }
+}
 
 
 #endif //DATA_STRUCTURES_LINKED_TREE_H
