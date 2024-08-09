@@ -22,7 +22,7 @@ public:
     //Linked_tree(const Linked_tree &);
 
     //distruttore
-    ~Linked_tree();
+    ~Linked_tree ();
 
     //ridefinizione dei metodi virtuali puri della classe tree
 
@@ -50,7 +50,7 @@ public:
 
     void cancfiglio (nodo, nodo);
 
-    void stampapreordine() const;
+    void stampapreordine () const;
 
     //sovraccarico degli operatori
 
@@ -59,33 +59,33 @@ public:
     bool operator== (const Linked_tree &) const;
 
 private:
-    void stampapreordineRic(nodo) const;
+    void stampapreordineRic (nodo) const;
 
     nodo Radice;
 };
 
 template<class T>
-void Linked_tree<T>::stampapreordine() const {
-    if (!alberovuoto()) {
-        stampapreordineRic(radice());
+void Linked_tree<T>::stampapreordine () const {
+    if (!alberovuoto ()) {
+        stampapreordineRic (radice ());
     }
 }
 
 template<class T>
-void Linked_tree<T>::stampapreordineRic(nodo n) const {
-    cout << n->getElem() << " ";
-    if (!foglia(n)) {
-        posizione p = n->primoFiglio();
-        while(!n->ultimoFratello(p) || p == n->primoFiglio()) {
-            stampapreordineRic(p->getElem());
-            p = p->getNext();
+void Linked_tree<T>::stampapreordineRic (nodo n) const {
+    cout << n->getElem () << " ";
+    if (!foglia (n)) {
+        posizione p = n->primoFiglio ();
+        while (!n->ultimoFratello (p) || p == n->primoFiglio ()) {
+            stampapreordineRic (p->getElem ());
+            p = p->getNext ();
         }
     }
 }
 
 template<class T>
-Linked_tree<T>::~Linked_tree() {
-    if (!alberovuoto()) {
+Linked_tree<T>::~Linked_tree () {
+    if (!alberovuoto ()) {
         delete Radice;
         Radice = nullptr;
     }
@@ -110,11 +110,11 @@ bool Linked_tree<T>::ultimofratello (Linked_tree::nodo p) const {
 }
 
 template<class T>
-typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio(Linked_tree::nodo n) const {
-    if (foglia(n)) {
-        throw std::runtime_error("Il nodo non ha figli");
+typename Linked_tree<T>::nodo Linked_tree<T>::primofiglio (Linked_tree::nodo n) const {
+    if (foglia (n)) {
+        throw std::runtime_error ("Il nodo non ha figli");
     }
-    return n->primoFiglio()->getElem();
+    return n->primoFiglio ()->getElem ();
 }
 
 template<class T>
