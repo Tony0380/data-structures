@@ -110,7 +110,7 @@ bool Linked_tree<T>::alberovuoto() const {
 
 template<class T>
 Linked_tree<T>::Linked_tree() {
-    Radice = nullptr;
+    creaalbero();
 }
 
 template<class T>

@@ -23,7 +23,7 @@ public:
 
     void setElem (const tipo_elem &);
 
-    void aggiungiFiglio (Nodo);
+    void aggiungiFiglio (Nodo *);
 
     void rimuoviFiglio (posizione);
 
@@ -76,7 +76,7 @@ void Nodo<T>::setElem (const tipo_elem &e) {
 }
 
 template<typename T>
-void Nodo<T>::aggiungiFiglio (Nodo figlio) {
+void Nodo<T>::aggiungiFiglio (Nodo *figlio) {
     Figli.inslista(figlio, Figli.ultimolista());
 }
 
