@@ -13,7 +13,10 @@ int main () {
         cout << "Il nodo è una foglia" << endl;
     }
     Nodo<int>* p = new Nodo<int>();
+    Nodo<int>* s = new Nodo<int>();
     p->setElem(6);
     n->aggiungiFiglio(p);
-    cout<<n->primoFiglio()->getElem()->getElem();
+    s->setElem(7);
+    n->aggiungiFiglio(s);
+    n->stampaFigli();
 }

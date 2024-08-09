@@ -36,6 +36,8 @@ public:
     posizione succFratello (posizione) const;
 
     bool ultimoFratello (posizione) const;
+
+    void stampaFigli() const;
 private:
     Nodo *padre;
 
@@ -79,6 +81,7 @@ template<typename T>
 void Nodo<T>::aggiungiFiglio (Nodo *figlio) {
     posizione p = Figli.ultimolista();
     Figli.inslista(figlio, p);
+    figlio->padre = this;
 }
 
 template<typename T>
@@ -104,6 +107,14 @@ typename Nodo<T>::posizione Nodo<T>::succFratello (posizione p) const {
 template<typename T>
 bool Nodo<T>::ultimoFratello (posizione p) const {
     return Figli.finelista(p);
+}
+
+template<typename T>
+void Nodo<T>::stampaFigli() const {
+    cout << "Figli di " << Elemento << ": ";
+    for (posizione p = Figli.primolista(); !Figli.finelista(p); p = Figli.succlista(p)) {
+        cout << p->getElem()->getElem() << " ";
+    }
 }
 
 
