@@ -14,10 +14,15 @@ int main () {
     }
     Nodo<int>* p = new Nodo<int>();
     Nodo<int>* s = new Nodo<int>();
+    Nodo<int>* a = new Nodo<int>();
+    Nodo<int>* d = new Nodo<int>();
     p->setElem(6);
     n->aggiungiFiglio(p);
     s->setElem(7);
     n->aggiungiFiglio(s);
+    a->setElem(8);
+    n->aggiungiFiglio(a);
+    d->setElem(9);
+    n->aggiungiFiglio(d);
     n->stampaFigli();
-    cout << "Il padre del nodo è: " << T.padre(p)->getElem() << endl;
 }

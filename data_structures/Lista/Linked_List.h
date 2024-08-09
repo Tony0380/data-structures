@@ -304,7 +304,7 @@ Nodo_Lista<T>::~Nodo_Lista () {
 
 template<class T>
 typename Linked_List<T>::posizione Linked_List<T>::ultimolista () const {
-    return testa->getPred ();
+    return testa;
 }
 
 #endif //DATA_STRUCTURES_LINKED_LIST_H
