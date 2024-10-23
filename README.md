@@ -4,7 +4,7 @@
 
 ### Strutture Dati:
 
-[LIsta](https://github.com/Tony0380/data-structures/tree/master/Lista)
+[Lista](https://github.com/Tony0380/data-structures/tree/master/Lista)
 
 [Pila](https://github.com/Tony0380/data-structures/tree/master/Pila)
 
