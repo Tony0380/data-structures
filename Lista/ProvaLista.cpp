@@ -10,6 +10,7 @@
 using namespace std;
 
 int main() {
+<<<<<<< Updated upstream
     Linked_List<int> l,l2;
     l.crealista();
     Nodo_Lista<int>* p = l.ultimolista();
@@ -28,4 +29,16 @@ int main() {
 
     return 0;
 
+=======
+    List_Vector<int> l = List_Vector<int>();
+    int i = l.primolista();
+    cout << i << endl;
+    l.scrivilista(5, i);
+    cout << "prova" << endl;
+    l.stampalista();
+    i = l.succlista(i);
+    l.inslista(6,i);
+    l.stampalista();
+    return 0;
+>>>>>>> Stashed changes
 }
