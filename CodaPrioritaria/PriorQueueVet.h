@@ -27,6 +27,8 @@ private:
 
 };
 
+template <typename T>
+
 
 
 #endif //DATA_STRUCTURES_PRIORQUEUEVET_H
